@@ -25,9 +25,9 @@ namespace Jasuvis.Handlers
             return Repositories.UserRepository.isEmailUnique(email);
         }
 
-        //public static void insertUser(String username, String password, String name, String gender, String phoneNumber, String address)
-        //{
-        //    Repositories.UserRepository.insertUser(username, password, name, gender, phoneNumber, address);
-        //}
+        public static void insertUser(String email, String password, String role, String name, String gender, String phoneNumber, String address)
+        {
+            Repositories.UserRepository.insertUser(email, password, role , name, gender, phoneNumber, address);
+        }
     }
 }

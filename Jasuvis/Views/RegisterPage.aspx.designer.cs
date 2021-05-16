@@ -132,6 +132,33 @@ namespace Jasuvis.Views
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
 
         /// <summary>
+        /// serviceProviderlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceProviderlbl;
+
+        /// <summary>
+        /// serviceProviderBtnYes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton serviceProviderBtnYes;
+
+        /// <summary>
+        /// serviceProviderBtnNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton serviceProviderBtnNo;
+
+        /// <summary>
         /// errorLbl control.
         /// </summary>
         /// <remarks>

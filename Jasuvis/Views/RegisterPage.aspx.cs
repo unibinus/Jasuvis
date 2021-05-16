@@ -16,7 +16,17 @@ namespace Jasuvis.Views
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
+            String email = emailTxt.Text;
+            String password = passwordTxt.Text;
+            String name = nameTxt.Text;
+            String phoneNumber = phoneTxt.Text;
+            Boolean isMale = maleRadio.Checked;
+            Boolean isFemale = femaleRadio.Checked;
+            Boolean isServiceProvider = serviceProviderBtnYes.Checked;
+            Boolean isNotServiceProvider = serviceProviderBtnNo.Checked;
+            String Address = addressTxt.Text;
 
+            errorLbl.Text = Controllers.RegisterController.registerValidation(email, password, isServiceProvider, isNotServiceProvider, name, isMale, isFemale, phoneNumber, Address, Response);
         }
     }
 }
