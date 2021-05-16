@@ -7,8 +7,8 @@
     </div>
 
     <div class="form-group col-md-6">
-        <asp:Label ID="usernameLbl" runat="server" Text="Username"></asp:Label>
-        <asp:TextBox ID="usernameInput" runat="server"></asp:TextBox>
+        <asp:Label ID="emailLbl" runat="server" Text="Email"></asp:Label>
+        <asp:TextBox ID="emailInput" runat="server"></asp:TextBox>
     </div>
     <div class="form-group col-md-6">
         <asp:Label ID="passwordLbl" runat="server" Text="Password"></asp:Label>
