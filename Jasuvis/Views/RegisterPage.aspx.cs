@@ -16,6 +16,7 @@ namespace Jasuvis.Views
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
+            String username = usernameTxt.Text;
             String email = emailTxt.Text;
             String password = passwordTxt.Text;
             String name = nameTxt.Text;
@@ -25,8 +26,9 @@ namespace Jasuvis.Views
             Boolean isServiceProvider = serviceProviderBtnYes.Checked;
             Boolean isNotServiceProvider = serviceProviderBtnNo.Checked;
             String Address = addressTxt.Text;
-
-            errorLbl.Text = Controllers.RegisterController.registerValidation(email, password, isServiceProvider, isNotServiceProvider, name, isMale, isFemale, phoneNumber, Address, Response);
+            FileUpload PictureFile = profilePictureFile;
+            Boolean hasUploadedFile = profilePictureFile.HasFile;
+            errorLbl.Text = Controllers.RegisterController.registerValidation(username, email, password, isServiceProvider, isNotServiceProvider, name, isMale, isFemale, phoneNumber, Address, PictureFile, hasUploadedFile, Response);
         }
     }
 }

@@ -8,6 +8,10 @@ namespace Jasuvis.Handlers
 {
     public static class UserHandler
     {
+        public static Boolean usernameIsUnique(String username)
+        {
+            return Repositories.UserRepository.isUsernameUnique(username);
+        }
         public static User getUserByUsernameAndPassword(String username, String password)
         {
             User user = Repositories.UserRepository.getUserByUsernameAndPassword(username, password);
@@ -25,9 +29,9 @@ namespace Jasuvis.Handlers
             return Repositories.UserRepository.isEmailUnique(email);
         }
 
-        public static void insertUser(String email, String password, String role, String name, String gender, String phoneNumber, String address)
+        public static void insertUser(String username, String email, String password, String role, String name, String gender, String phoneNumber, String address, String pictureFilePath)
         {
-            Repositories.UserRepository.insertUser(email, password, role , name, gender, phoneNumber, address);
+            Repositories.UserRepository.insertUser(username, email, password, role , name, gender, phoneNumber, address, pictureFilePath);
         }
     }
 }
