@@ -14,7 +14,7 @@ namespace Jasuvis.Views
         {
             if (!Page.IsPostBack)
             {
-                emailInput.Text = AuthenticationController.getEmailFromCookie(Request);
+                usernameInput.Text = AuthenticationController.getEmailFromCookie(Request);
                 passwordInput.Attributes.Add("value", AuthenticationController.getPasswordFromCookie(Request));
 
             }
@@ -23,10 +23,10 @@ namespace Jasuvis.Views
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            String email = emailInput.Text;
+            String username = usernameInput.Text;
             String password = passwordInput.Text;
             Boolean rememberMeChecked = RememberMeCheckbox.Checked;
-            labelError.Text = Controllers.AuthenticationController.userLoginAuthentication(email, password, rememberMeChecked, Session, Response);
+            labelError.Text = Controllers.AuthenticationController.userLoginAuthentication(username, password, rememberMeChecked, Session, Response);
         }
     }
 }

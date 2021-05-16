@@ -10,10 +10,10 @@ namespace Jasuvis.Repositories
     {
         private static JasuvisDBEntities5 db = Repositories.JasuvisDBSingleton.getDBInstance();
 
-        public static User getUserByEmailAndPassword(String email, String password)
+        public static User getUserByUsernameAndPassword(String username, String password)
         {
             return (from user in db.Users
-                    where user.Email.Equals(email) && user.Password.Equals(password)
+                    where user.Username.Equals(username) && user.Password.Equals(password)
                     select user).FirstOrDefault();
         }
 

@@ -8,9 +8,9 @@ namespace Jasuvis.Handlers
 {
     public static class UserHandler
     {
-        public static User getUserByUsernameAndPassword(String email, String password)
+        public static User getUserByUsernameAndPassword(String username, String password)
         {
-            User user = Repositories.UserRepository.getUserByEmailAndPassword(email, password);
+            User user = Repositories.UserRepository.getUserByUsernameAndPassword(username, password);
             return user;
         }
 
