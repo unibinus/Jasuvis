@@ -15,22 +15,31 @@ namespace Jasuvis.Views
     {
 
         /// <summary>
-        /// emailLbl control.
+        /// registerBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLbl;
+        protected global::System.Web.UI.WebControls.Button registerBtn;
 
         /// <summary>
-        /// emailTxt control.
+        /// usernameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.Label usernameLbl;
+
+        /// <summary>
+        /// usernameInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox usernameInput;
 
         /// <summary>
         /// passwordLbl control.
@@ -42,31 +51,22 @@ namespace Jasuvis.Views
         protected global::System.Web.UI.WebControls.Label passwordLbl;
 
         /// <summary>
-        /// passwordTxt control.
+        /// passwordInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordTxt;
+        protected global::System.Web.UI.WebControls.TextBox passwordInput;
 
         /// <summary>
-        /// rememberMeChk control.
+        /// RememberMeCheckbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox rememberMeChk;
-
-        /// <summary>
-        /// errorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorLbl;
+        protected global::System.Web.UI.WebControls.CheckBox RememberMeCheckbox;
 
         /// <summary>
         /// loginBtn control.
@@ -76,5 +76,14 @@ namespace Jasuvis.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button loginBtn;
+
+        /// <summary>
+        /// labelError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelError;
     }
 }

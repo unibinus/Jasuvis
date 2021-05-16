@@ -2,19 +2,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Label ID="emailLbl" runat="server" Text="Email"></asp:Label>
-        <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
+    <div class="form-group col-md-6">
+        <asp:Button ID="registerBtn" Text="Register Here" runat="server" class="btn btn-link"/> 
     </div>
-    <div>
+
+    <div class="form-group col-md-6">
+        <asp:Label ID="usernameLbl" runat="server" Text="Username"></asp:Label>
+        <asp:TextBox ID="usernameInput" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group col-md-6">
         <asp:Label ID="passwordLbl" runat="server" Text="Password"></asp:Label>
-        <asp:TextBox TextMode="Password" ID="passwordTxt" runat="server"></asp:TextBox>
+        <asp:TextBox TextMode="Password" ID="passwordInput" runat="server"></asp:TextBox>
     </div>
-    <div>
-        <asp:CheckBox ID="rememberMeChk" runat="server" Text="Remember Me"/>
+
+    <div class="form-group col-md-6">
+        <div class="form-check">
+            <asp:CheckBox ID="RememberMeCheckbox" runat="server" class="form-check-input" text="Remember Me"/>
+        </div>
+    </div> 
+    <br />
+
+    <div class="form-group col-md-6">
+        <asp:Button ID="loginBtn" OnClick="loginBtn_Click" Text="Login" runat="server" class="btn" /> 
     </div>
-    <div>
-        <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label> 
-    </div>
-    <asp:Button ID="loginBtn" OnClick="loginBtn_Click" Text="Login" runat="server" />
+
+    <div class="form-group col-md-6">
+        <asp:Label ID="labelError" runat="server" Text=""></asp:Label> 
+    </div> 
 </asp:Content>
