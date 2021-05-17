@@ -78,3 +78,27 @@ body {
     white-space: nowrap;
     padding: .5rem 1rem;
 }
+
+.home-rec {
+    background-color: #fff;
+}
+
+.rec-text {
+    font-family: acumin-pro, sans-serif;
+    font-weight: 700;
+    opacity: 60%;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: large;
+}
+
+.sp-card {
+    width: 6rem;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding-bottom: 3rem;
+}
