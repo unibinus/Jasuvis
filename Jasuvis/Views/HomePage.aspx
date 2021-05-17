@@ -3,16 +3,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="home-header">
-        <div class="home-Jasuvis">
-            Jasuvis
-        </div>
-        <div class="serviceProv-regis-button">
-            <asp:Button ID="spRegisBtn" OnClick="spRegisBtn_Click" runat="server" Text="Sign Up As Service Provider" />
-        </div>
+        <div class="header-Jasuvis-Group">
+            <div class="home-Jasuvis-text">
+                Jasuvis
+            </div>
+            <div class="serviceProv-regis-button btn">
+                <asp:Button ID="spRegisBtn" OnClick="spRegisBtn_Click" runat="server" Text="Sign Up As Service Provider" />
+            </div>
+        </div>  
         <div class="header-intro">
             Just Click One Button, and We Will Get Your Problems Done
         </div>
     </div>
+
     <div class="home-rec">
         <div class="rec-text">
             Recommended For You
