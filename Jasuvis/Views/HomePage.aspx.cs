@@ -13,5 +13,10 @@ namespace Jasuvis.Views
         {
 
         }
+
+        protected void spRegisBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
