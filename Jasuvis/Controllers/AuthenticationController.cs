@@ -10,17 +10,15 @@ namespace Jasuvis.Controllers
 {
     public static class AuthenticationController
     {
-        private static String validateEmail(String email)
-        {
-            if (email.Contains("@") && email.Contains(".") &&
-              !email.StartsWith("@") && !email.EndsWith("@") &&
-              !email.StartsWith(".") && !email.EndsWith(".") &&
-              Math.Abs(email.IndexOf('@') - email.IndexOf('.')) != 1)
-            {
-                return "Success";
-            }
 
-            return "Invalid Email";
+
+        private static String validateUsername(String username)
+        {
+            if (String.IsNullOrWhiteSpace(username))
+            {
+                return "Username cannot be empty";
+            }
+            return "Success";
         }
         private static String validatePassword(String password)
         {
@@ -31,10 +29,10 @@ namespace Jasuvis.Controllers
             return "Success";
         }
 
-        public static String userLoginAuthentication(String email, String password, Boolean userCheckRememberMe, HttpSessionState Session, HttpResponse Response)
+        public static String userLoginAuthentication(String username, String password, Boolean userCheckRememberMe, HttpSessionState Session, HttpResponse Response)
         {
             User user = null;
-            String errorMsg = validateEmail(email);
+            String errorMsg = validateUsername(username);
 
             if (errorMsg.Equals("Success"))
             {
@@ -42,10 +40,10 @@ namespace Jasuvis.Controllers
             }
             if (errorMsg.Equals("Success"))
             {
-                user = Handlers.UserHandler.getUserByUsernameAndPassword(email, password);
+                user = Handlers.UserHandler.getUserByUsernameAndPassword(username, password);
                 if (user == null)
                 {
-                    errorMsg = "Email and password combination did not match";
+                    errorMsg = "Username and password combination did not match";
                 }
                 else
                 {

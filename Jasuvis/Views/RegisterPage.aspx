@@ -6,6 +6,10 @@
         Register
     </div>
     <div>
+        <asp:Label ID="usernameLbl" runat="server" Text="Username"></asp:Label>
+        <asp:TextBox ID="usernameTxt" runat="server"></asp:TextBox>
+    </div>
+    <div>
         <asp:Label ID="emailLbl" runat="server" Text="Email"></asp:Label>
         <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
     </div>
@@ -31,8 +35,16 @@
         <asp:TextBox ID="addressTxt" TextMode="MultiLine" runat="server"></asp:TextBox>
     </div>
     <div>
+        <asp:Label ID="serviceProviderlbl" runat="server" Text="Are you a service provider?"></asp:Label>
+        <asp:RadioButton ID="serviceProviderBtnYes" GroupName="serviceProvider" Text="Yes" runat="server" />
+        <asp:RadioButton ID="serviceProviderBtnNo" GroupName="serviceProvider" Text="No" runat="server" />
+    </div>
+    <div>
+        <asp:Label ID="uploadPictureLabel" runat="server" Text="Upload your profile picture"></asp:Label>
+        <asp:FileUpload ID="profilePictureFile" runat="server" />
+    </div>
+    <div>
         <asp:Label ID="errorLbl" runat="server" ForeColor="Red" Text=""></asp:Label>
-        
     </div>
     <asp:Button ID="RegisterBtn" OnClick="RegisterBtn_Click" runat="server" Text="Register" />
 </asp:Content>
