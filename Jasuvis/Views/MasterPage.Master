@@ -10,6 +10,8 @@
     <link href="../Styles/Master.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/aob3tlz.css">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -42,6 +44,10 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        <footer>
+            <%-- Ini buat footer belom ganti img --%>
+            <asp:ImageButton class="navbar-brand" ID="ImageButton1" runat="server" OnClick="JasuvisLogo_Click" ImageUrl="~/Assets/Logo.png" Width="20%" />
+        </footer>
     </form>
 </body>
 </html>
