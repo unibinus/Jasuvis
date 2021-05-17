@@ -20,10 +20,27 @@
         <div class="rec-text">
             Recommended For You
         </div>
-        <div class="card">
-            <img src=""/>
-            Supri
-            Ahli Cuci AC
+        <div class="carousel">
+            <div class="card sp-card">
+                <img src=""/>
+                <div class="sp-name">Supri</div>
+                <div class="sp-work">Ahli Cuci AC</div>
+            </div>
+            <div class="card sp-card">
+                <img src=""/>
+                <div class="sp-name">Supri</div>
+                <div class="sp-work">Ahli Cuci AC</div>
+            </div>
+            <div class="card sp-card">
+                <img src=""/>
+                <div class="sp-name">Supri</div>
+                <div class="sp-work">Ahli Cuci AC</div>
+            </div>
+            <div class="card sp-card">
+                <img src=""/>
+                <div class="sp-name">Supri</div>
+                <div class="sp-work">Ahli Cuci AC</div>
+            </div>
         </div>
     </div>
 </asp:Content>
