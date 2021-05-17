@@ -16,17 +16,20 @@ namespace Jasuvis.Views
             {
                 usernameInput.Text = AuthenticationController.getEmailFromCookie(Request);
                 passwordInput.Attributes.Add("value", AuthenticationController.getPasswordFromCookie(Request));
-
             }
         }
 
-
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            String email = usernameInput.Text;
+            String username = usernameInput.Text;
             String password = passwordInput.Text;
             Boolean rememberMeChecked = RememberMeCheckbox.Checked;
-            labelError.Text = Controllers.AuthenticationController.userLoginAuthentication(email, password,rememberMeChecked,Session,Response);
+            labelError.Text = Controllers.AuthenticationController.userLoginAuthentication(username, password,rememberMeChecked,Session,Response);
+        }
+
+        protected void registerBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/RegisterPage.aspx");
         }
     }
 }
