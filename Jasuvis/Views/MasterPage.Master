@@ -23,8 +23,6 @@
             </div>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    
-                <%--  Test --%>
                 <ul class="navbar-nav">
                   <li class="nav-item active">
                     <asp:HyperLink class="nav-link" ID="chatLink" NavigateUrl="~/Views/ChatPage.aspx"  runat="server">Chat</asp:HyperLink>

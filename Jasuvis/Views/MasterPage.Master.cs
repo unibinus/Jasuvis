@@ -17,7 +17,7 @@ namespace Jasuvis.Views
 
         protected void JasuvisLogo_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("~/Views/HomePage.aspx");
         }
 
         protected void searchButton_Click(object sender, EventArgs e)
