@@ -21,7 +21,17 @@
             Recommended For You
         </div>
         <div class="carousel">
-            <div class="card sp-card">
+            <asp:Repeater ID="Repeater" runat="server">
+                <ItemTemplate>
+                    <div class="card sp-card">
+<%--                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' Width="100px" />
+                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>'></asp:Label>--%>
+                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            
+           <%-- <div class="card sp-card">
                 <img src=""/>
                 <div class="sp-name">Supri</div>
                 <div class="sp-work">Ahli Cuci AC</div>
@@ -35,12 +45,7 @@
                 <img src=""/>
                 <div class="sp-name">Supri</div>
                 <div class="sp-work">Ahli Cuci AC</div>
-            </div>
-            <div class="card sp-card">
-                <img src=""/>
-                <div class="sp-name">Supri</div>
-                <div class="sp-work">Ahli Cuci AC</div>
-            </div>
+            </div>--%>
         </div>
     </div>
 </asp:Content>
