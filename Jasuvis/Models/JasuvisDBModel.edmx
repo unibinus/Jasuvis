@@ -60,9 +60,9 @@
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ProfilePicture" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProfilePicture" Type="varchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK__Review__ServiceI__5535A963">
+        <Association Name="FK__Review__ServiceI__403A8C7D">
           <End Role="Service" Type="Self.Service" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
@@ -74,7 +74,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Review__UserID__5441852A">
+        <Association Name="FK__Review__UserID__4D94879B">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
@@ -86,7 +86,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Service__Service__5165187F">
+        <Association Name="FK__Service__Service__3C69FB99">
           <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="1" />
           <End Role="Service" Type="Self.Service" Multiplicity="*" />
           <ReferentialConstraint>
@@ -98,7 +98,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Service__UserID__5070F446">
+        <Association Name="FK__Service__UserID__4CA06362">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Service" Type="Self.Service" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,7 +110,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transacti__Servi__5812160E">
+        <Association Name="FK__Transacti__Servi__4316F928">
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
           <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
@@ -122,7 +122,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transacti__UserI__59063A47">
+        <Association Name="FK__Transacti__UserI__4E88ABD4">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
@@ -134,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User__RoleID__4BAC3F29">
+        <Association Name="FK__User__RoleID__4F7CD00D">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -153,31 +153,31 @@
           <EntitySet Name="ServiceType" EntityType="Self.ServiceType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Review__ServiceI__5535A963" Association="Self.FK__Review__ServiceI__5535A963">
+          <AssociationSet Name="FK__Review__ServiceI__403A8C7D" Association="Self.FK__Review__ServiceI__403A8C7D">
             <End Role="Service" EntitySet="Service" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__Review__UserID__5441852A" Association="Self.FK__Review__UserID__5441852A">
+          <AssociationSet Name="FK__Review__UserID__4D94879B" Association="Self.FK__Review__UserID__4D94879B">
             <End Role="User" EntitySet="User" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__Service__Service__5165187F" Association="Self.FK__Service__Service__5165187F">
+          <AssociationSet Name="FK__Service__Service__3C69FB99" Association="Self.FK__Service__Service__3C69FB99">
             <End Role="ServiceType" EntitySet="ServiceType" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
-          <AssociationSet Name="FK__Service__UserID__5070F446" Association="Self.FK__Service__UserID__5070F446">
+          <AssociationSet Name="FK__Service__UserID__4CA06362" Association="Self.FK__Service__UserID__4CA06362">
             <End Role="User" EntitySet="User" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transacti__Servi__5812160E" Association="Self.FK__Transacti__Servi__5812160E">
+          <AssociationSet Name="FK__Transacti__Servi__4316F928" Association="Self.FK__Transacti__Servi__4316F928">
             <End Role="Service" EntitySet="Service" />
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transacti__UserI__59063A47" Association="Self.FK__Transacti__UserI__59063A47">
+          <AssociationSet Name="FK__Transacti__UserI__4E88ABD4" Association="Self.FK__Transacti__UserI__4E88ABD4">
             <End Role="User" EntitySet="User" />
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
-          <AssociationSet Name="FK__User__RoleID__4BAC3F29" Association="Self.FK__User__RoleID__4BAC3F29">
+          <AssociationSet Name="FK__User__RoleID__4F7CD00D" Association="Self.FK__User__RoleID__4F7CD00D">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
@@ -287,7 +287,7 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ProfilePicture" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePicture" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__UserID__5441852A" FromRole="User" ToRole="Review" />
           <NavigationProperty Name="Role" Relationship="JasuvisDBModel.FK__User__RoleID__4BAC3F29" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Services" Relationship="JasuvisDBModel.FK__Service__UserID__5070F446" FromRole="User" ToRole="Service" />
