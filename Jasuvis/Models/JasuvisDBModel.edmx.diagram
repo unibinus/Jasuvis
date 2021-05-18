@@ -11,13 +11,13 @@
         <EntityTypeShape EntityType="JasuvisDBModel.ServiceType" Width="1.5" PointX="6" PointY="0.75" />
         <EntityTypeShape EntityType="JasuvisDBModel.Transaction" Width="1.5" PointX="10.5" PointY="3.5" />
         <EntityTypeShape EntityType="JasuvisDBModel.User" Width="1.5" PointX="3" PointY="2.75" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__ServiceI__5535A963" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__UserID__5441852A" />
-        <AssociationConnector Association="JasuvisDBModel.FK__User__RoleID__4BAC3F29" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__Service__5165187F" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__UserID__5070F446" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__Servi__5812160E" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__59063A47" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Review__ServiceI__68487DD7" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Review__UserID__6754599E" />
+        <AssociationConnector Association="JasuvisDBModel.FK__User__RoleID__5EBF139D" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Service__Service__6477ECF3" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Service__UserID__6383C8BA" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__Servi__6B24EA82" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__6C190EBB" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
