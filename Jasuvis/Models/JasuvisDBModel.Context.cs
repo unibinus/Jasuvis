@@ -13,10 +13,10 @@ namespace Jasuvis.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class JasuvisDBEntities6 : DbContext
+    public partial class JasuvisDBEntities5 : DbContext
     {
-        public JasuvisDBEntities6()
-            : base("name=JasuvisDBEntities6")
+        public JasuvisDBEntities5()
+            : base("name=JasuvisDBEntities5")
         {
         }
     

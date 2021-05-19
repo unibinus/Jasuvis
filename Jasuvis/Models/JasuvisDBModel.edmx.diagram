@@ -4,36 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee00ab9e8e8844b5b908145f28d7f674" Name="Diagram1" ZoomLevel="72">
-        <EntityTypeShape EntityType="JasuvisDBModel.Role" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="JasuvisDBModel.Service" Width="1.5" PointX="8.25" PointY="3.125" />
-        <EntityTypeShape EntityType="JasuvisDBModel.ServiceType" Width="1.5" PointX="6" PointY="0.75" />
-        <EntityTypeShape EntityType="JasuvisDBModel.Transaction" Width="1.5" PointX="10.5" PointY="3.5" />
-<<<<<<< HEAD
-        <EntityTypeShape EntityType="JasuvisDBModel.User" Width="1.5" PointX="3" PointY="2.75" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__ServiceI__68487DD7" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__UserID__6754599E" />
-        <AssociationConnector Association="JasuvisDBModel.FK__User__RoleID__5EBF139D" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__Service__6477ECF3" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__UserID__6383C8BA" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__Servi__6B24EA82" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__6C190EBB" />
-=======
+      <Diagram DiagramId="0c4ec3dbce764624b3ac81b9a22f8f4c" Name="Diagram1">
+        <EntityTypeShape EntityType="JasuvisDBModel.Review" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JasuvisDBModel.Role" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JasuvisDBModel.Service" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JasuvisDBModel.ServiceType" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JasuvisDBModel.Transaction" Width="1.5" PointX="10.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="JasuvisDBModel.User" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="JasuvisDBModel.FK__User__RoleID__4BAC3F29" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__Service__5165187F" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Service__UserID__5070F446" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__Servi__5812160E" />
-<<<<<<< HEAD
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__59063A47" />
->>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
-=======
-        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__59063A47" ></AssociationConnector>
-        <EntityTypeShape EntityType="JasuvisDBModel.Review" Width="1.5" PointX="6" PointY="3.375" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__ServiceI__17F790F9" />
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__Transact__18EBB532" ></AssociationConnector>
-        <AssociationConnector Association="JasuvisDBModel.FK__Review__UserID__17036CC0" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
+        <AssociationConnector Association="JasuvisDBModel.FK__Review__ServiceI__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Review__Transact__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Review__UserID__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__User__RoleID__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Service__Service__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Service__UserID__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__Servi__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="JasuvisDBModel.FK__Transacti__UserI__1DB06A4F" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
