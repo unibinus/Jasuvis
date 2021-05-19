@@ -105,151 +105,151 @@
     <asp:Button ID="RegisterBtn" OnClick="RegisterBtn_Click" runat="server" Text="Register" />
     <script type="text/javascript">
         $(document).ready(function () {
-            $.validator.addMethod("GenderDDLValidation", function (value, element, param) {
-                if (value == "null")
-                    return false;
-                else
-                    return true;
-            }, "Please select a Gender.");
-            $.validator.addMethod("AddressValidation", function (value, element) {
-                if (!value.startsWith("Jl. ")) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }, "Address must start with Jl. ");
-            $.validator.addMethod("fileSizeValidation", function (value, element, param) {
-                return this.optional(element) || (element.files[0].size <= param);
-            }, "Maximum file size is 4MB.");
-            $.validator.addMethod("minimumPrice", function (value, element, param) {
-                return value > param;
-            }, "Minimum Price is 0");
-            $("#form1").validate({
-                rules: {
-            <%=usernameTxt.UniqueID %>: {
-                required: true,
-            },
-            <%=emailTxt.UniqueID %>: {
-                    required: true,
-                    email: true
-                },
-            <%=passwordTxt.UniqueID %>: {
-                    required: true,
-                    minlength: 8
-                },
-            <%=nameTxt.UniqueID %>: {
-                    required: true
-                },
-            <%=phoneTxt.UniqueID %>: {
-                    required: true,
-                    number: true,
-                },
-            <%=genderDDL.UniqueID %>: {
-                    GenderDDLValidation: true
-                },
-            <%=addressTxt.UniqueID %>: {
-                    required: true,
-                    AddressValidation: true
-                },
-            <%=serviceProviderRadioBtn.UniqueID%>: {
-                    required: true
-                },
-            <%=userTermsAndConditionCheckBox.UniqueID %>: {
-                    required: true
-                },
-            <%=KTPUpload.UniqueID%>: {
-                    required: true,
-                    extension: "png|jpe?g|png",
-                    fileSizeValidation: 4194304
-                },
-            <%=selfieKTPUpload.UniqueID%>: {
-                    required: true,
-                    extension: "png|jpeg|jpg|png",
-                    fileSizeValidation: 4194304
-                },
-            <%=profilePictureFile.UniqueID%>: {
-                    required: true,
-                    extension: "png|jpeg|jpg|png",
-                    fileSizeValidation: 4194304
-                },
-            <%=serviceNameTxt.UniqueID%>: {
-                    required: true
-                },
-            <%=servicePriceTxt.UniqueID%>: {
-                    required: true,
-                    minimumPrice: 0 + Number.MIN_VALUE
-                },
-            <%=serviceDescriptionTxt.UniqueID%>: {
-                    required: true
-                },
-            <%=serviceProviderTermsAndConditionCheckBox.UniqueID%>: {
-                    required: true
-                },
-            
 
-        },
-        messages: {
-            <%=usernameTxt.UniqueID %>: {
-                required: "Please enter a username"
-            },
-            <%=emailTxt.UniqueID %>: {
-                required: "Please enter your email",
-                email: "Invalid email format"
-            },
-            <%=passwordTxt.UniqueID %>: {
-                required: "Please enter a password",
-                minlength: "password must be minimal 8 characters"
-            },
-            <%=nameTxt.UniqueID %>: {
-                required: "Please enter your name",
-            },
-            <%=phoneTxt.UniqueID %>: {
-                required: "Please enter your phone number",
-                number: "Please enter your phone number as a numerical value"
-            },
-            <%=addressTxt.UniqueID %>: {
-                required: "Please enter your home address"
-            },
-           <%=serviceProviderRadioBtn.UniqueID %>: {
-                required: "Please choose whether you are a service provider or not"
-            },
-           <%=userTermsAndConditionCheckBox.UniqueID %>: {
-                required: "You have to agree to the terms and condition"
 
-            },
-            <%=KTPUpload.UniqueID%>: {
-                required: "Please upload your KTP photo",
-                extension: "File extension must be either 'jpg', 'png', 'jpeg'"
-            },
-            <%=selfieKTPUpload.UniqueID%>: {
-                required: "Please upload your selfie with KTP",
-                extension: "File extension must be either 'jpg', 'png', 'jpeg'"
-            },
-            <%=profilePictureFile.UniqueID%>: {
-                required: "Please upload your profile photo",
-                extension: "File extension must be either 'jpg', 'png', 'jpeg'"
-            },
-            <%=servicePriceTxt.UniqueID%>: {
-                required: "Please input your service price"
-            },
-            <%=serviceDescriptionTxt.UniqueID%>: {
-                required: "Please provide a description for your service"
-            },
-            <%=serviceProviderTermsAndConditionCheckBox.UniqueID%>: {
-                required: "You have to agree to the terms and condition"
-            },
-        },
-        errorPlacement: function (error, element) {
-            if (element.is(":radio")) {
-                error.appendTo(element.parents('.radioClass'));
-            }
-            else { // This is the default behavior   
-                error.insertAfter(element);
-            }
-        },
+                        $.validator.addMethod("GenderDDLValidation", function (value, element, param) {
+                            if (value == "null")
+                                return false;
+                            else
+                                return true;
+                        }, "Please select a Gender.");
+                        $.validator.addMethod("AddressValidation", function (value, element) {
+                            if (!value.startsWith("Jl. ")) {
+                                return false;
+                            }
+                            else {
+                                return true;
+                            }
+                        }, "Address must start with Jl. ");
+                        $.validator.addMethod("fileSizeValidation", function (value, element, param) {
+                            return this.optional(element) || (element.files[0].size <= param);
+                        }, "Maximum file size is 4MB.");
+                        $.validator.addMethod("minimumPrice", function (value, element, param) {
+                            return value > param;
+                        }, "Minimum Price is 0");
+                        $("#form1").validate({
+                            rules: {
+                        <%=usernameTxt.UniqueID %>: {
+                            required: true,
+                        },
+                        <%=emailTxt.UniqueID %>: {
+                                required: true,
+                                email: true
+                            },
+                        <%=passwordTxt.UniqueID %>: {
+                                required: true,
+                                minlength: 8
+                            },
+                        <%=nameTxt.UniqueID %>: {
+                                required: true
+                            },
+                        <%=phoneTxt.UniqueID %>: {
+                                required: true,
+                                number: true,
+                            },
+                        <%=genderDDL.UniqueID %>: {
+                                GenderDDLValidation: true
+                            },
+                        <%=addressTxt.UniqueID %>: {
+                                required: true,
+                                AddressValidation: true
+                            },
+                        <%=serviceProviderRadioBtn.UniqueID%>: {
+                                required: true
+                            },
+                        <%=userTermsAndConditionCheckBox.UniqueID %>: {
+                                required: true
+                            },
+                        <%=KTPUpload.UniqueID%>: {
+                                required: true,
+                                extension: "png|jpe?g|png",
+                                fileSizeValidation: 4194304
+                            },
+                        <%=selfieKTPUpload.UniqueID%>: {
+                                required: true,
+                                extension: "png|jpeg|jpg|png",
+                                fileSizeValidation: 4194304
+                            },
+                        <%=profilePictureFile.UniqueID%>: {
+                                required: true,
+                                extension: "png|jpeg|jpg|png",
+                                fileSizeValidation: 4194304
+                            },
+                        <%=serviceNameTxt.UniqueID%>: {
+                                required: true
+                            },
+                        <%=servicePriceTxt.UniqueID%>: {
+                                required: true,
+                                minimumPrice: 0 + Number.MIN_VALUE
+                            },
+                        <%=serviceDescriptionTxt.UniqueID%>: {
+                                required: true
+                            },
+                        <%=serviceProviderTermsAndConditionCheckBox.UniqueID%>: {
+                                required: true
+                            },
+                    },
+                    messages: {
+                        <%=usernameTxt.UniqueID %>: {
+                            required: "Please enter a username"
+                        },
+                        <%=emailTxt.UniqueID %>: {
+                            required: "Please enter your email",
+                            email: "Invalid email format"
+                        },
+                        <%=passwordTxt.UniqueID %>: {
+                            required: "Please enter a password",
+                            minlength: "password must be minimal 8 characters"
+                        },
+                        <%=nameTxt.UniqueID %>: {
+                            required: "Please enter your name",
+                        },
+                        <%=phoneTxt.UniqueID %>: {
+                            required: "Please enter your phone number",
+                            number: "Please enter your phone number as a numerical value"
+                        },
+                        <%=addressTxt.UniqueID %>: {
+                            required: "Please enter your home address"
+                        },
+                       <%=serviceProviderRadioBtn.UniqueID %>: {
+                            required: "Please choose whether you are a service provider or not"
+                        },
+                       <%=userTermsAndConditionCheckBox.UniqueID %>: {
+                            required: "You have to agree to the terms and condition"
 
-    });
+                        },
+                        <%=KTPUpload.UniqueID%>: {
+                            required: "Please upload your KTP photo",
+                            extension: "File extension must be either 'jpg', 'png', 'jpeg'"
+                        },
+                        <%=selfieKTPUpload.UniqueID%>: {
+                            required: "Please upload your selfie with KTP",
+                            extension: "File extension must be either 'jpg', 'png', 'jpeg'"
+                        },
+                        <%=profilePictureFile.UniqueID%>: {
+                            required: "Please upload your profile photo",
+                            extension: "File extension must be either 'jpg', 'png', 'jpeg'"
+                        },
+                        <%=servicePriceTxt.UniqueID%>: {
+                            required: "Please input your service price"
+                        },
+                        <%=serviceDescriptionTxt.UniqueID%>: {
+                            required: "Please provide a description for your service"
+                        },
+                        <%=serviceProviderTermsAndConditionCheckBox.UniqueID%>: {
+                            required: "You have to agree to the terms and condition"
+                        },
+                    },
+                    errorPlacement: function (error, element) {
+                        if (element.is(":radio")) {
+                            error.appendTo(element.parents('.radioClass'));
+                        }
+                        else { // This is the default behavior   
+                            error.insertAfter(element);
+                        }
+                    }
+
+                });
 });
 
 

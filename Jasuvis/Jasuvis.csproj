@@ -176,6 +176,7 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\MasterPage.Master" />
+    <None Include="Properties\PublishProfiles\Jasuvis - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
