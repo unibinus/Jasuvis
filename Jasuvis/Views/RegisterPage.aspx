@@ -2,107 +2,118 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <div class="regis">
+                            Register
+                        </div>
+                        <%-- PAge 1 --%>
+                        <div class="form-label-group">
+                            <asp:Label ID="usernameLbl" runat="server" Text="Username"></asp:Label>
+                            <asp:TextBox ID="usernameTxt" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ClientIDMode="Static" ID="emailLbl" runat="server" Text="Email"></asp:Label>
+                            <asp:TextBox ID="emailTxt" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ClientIDMode="Static" ID="passwordLbl" runat="server" Text="Password"></asp:Label>
+                            <asp:TextBox ID="passwordTxt" TextMode="Password" runat="server"  class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ClientIDMode="Static" ID="nameLbl" runat="server" Text="Name"></asp:Label>
+                            <asp:TextBox ID="nameTxt" runat="server"  class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ClientIDMode="Static" ID="phoneLbl" runat="server" Text="Phone Number"></asp:Label>
+                            <asp:TextBox ID="phoneTxt" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:Label ID="genderLbl" runat="server" Text="Gender"></asp:Label>
+                            <asp:DropDownList ID="genderDDL" runat="server">
+                                 <asp:ListItem Value="null">Select Gender</asp:ListItem>
+                                 <asp:ListItem Value="M">Male</asp:ListItem>
+                                 <asp:ListItem Value="F">Female</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <br />
+                        <div class="form-label-group">
+                            <asp:Label ID="addressLbl" runat="server" Text="Address"></asp:Label>
+                            <asp:TextBox ID="addressTxt" TextMode="MultiLine" runat="server"  class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="serviceProviderConfirmationLabel" runat="server" Text="I want to be a service provider"></asp:Label>
+                                <asp:RadioButtonList CssClass="radioClass" ID="serviceProviderRadioBtn" RepeatDirection="Vertical" runat="server"  class="form-control">
+                                     <asp:ListItem Value="Yes">Yes</asp:ListItem>
+                                     <asp:ListItem Value="No">No</asp:ListItem>
+                                </asp:RadioButtonList>
+                            <%--<asp:Label ID="errorRadioServiceProvider" runat="server" Text="EROROOROROOR"></asp:Label>--%>
+                        </div>
 
-    <div>
-        Register
-    </div>
-    <%-- PAge 1 --%>
-    <div>
-        <asp:Label ID="usernameLbl" runat="server" Text="Username"></asp:Label>
-        <asp:TextBox ID="usernameTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ClientIDMode="Static" ID="emailLbl" runat="server" Text="Email"></asp:Label>
-        <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ClientIDMode="Static" ID="passwordLbl" runat="server" Text="Password"></asp:Label>
-        <asp:TextBox ID="passwordTxt" TextMode="Password" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ClientIDMode="Static" ID="nameLbl" runat="server" Text="Name"></asp:Label>
-        <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ClientIDMode="Static" ID="phoneLbl" runat="server" Text="Phone Number"></asp:Label>
-        <asp:TextBox ID="phoneTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ID="genderLbl" runat="server" Text="Gender"></asp:Label>
-        <asp:DropDownList ID="genderDDL" runat="server">
-             <asp:ListItem Value="null">Select Gender</asp:ListItem>
-             <asp:ListItem Value="M">Male</asp:ListItem>
-             <asp:ListItem Value="F">Female</asp:ListItem>
-        </asp:DropDownList>
-    </div>
-    <div>
-        <asp:Label ID="addressLbl" runat="server" Text="Address"></asp:Label>
-        <asp:TextBox ID="addressTxt" TextMode="MultiLine" runat="server"></asp:TextBox>
-    </div>
-    <div>
+                        <div class="form-label-group">
+                            <asp:Label ID="userTermsAndConditionLbl" runat="server" Text="I agree to the terms and condition"></asp:Label>
+                            <asp:CheckBox ID="userTermsAndConditionCheckBox" runat="server" class="form-control"/>
+                        </div>
+                        <%-- Page1 --%>
+                        <%-- Page2 --%>
 
-        <asp:Label ID="serviceProviderConfirmationLabel" runat="server" Text="I want to be a service provider"></asp:Label>
-            <asp:RadioButtonList CssClass="radioClass" ID="serviceProviderRadioBtn" RepeatDirection="Vertical" runat="server">
-                 <asp:ListItem Value="Yes">Yes</asp:ListItem>
-                 <asp:ListItem Value="No">No</asp:ListItem>
-            </asp:RadioButtonList>
-        <%--<asp:Label ID="errorRadioServiceProvider" runat="server" Text="EROROOROROOR"></asp:Label>--%>
-    </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="uploadKTP" runat="server" Text="Upload your KTP"></asp:Label>
+                            <asp:FileUpload ID="KTPUpload" runat="server" class="form-control"/>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="uploadSelfieWithKTP" runat="server" Text="Upload your selfie with KTP"></asp:Label>
+                            <asp:FileUpload ID="selfieKTPUpload" runat="server" class="form-control"/>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="uploadPictureLabel" runat="server" Text="Upload your profile picture" ></asp:Label>
+                            <asp:FileUpload ID="profilePictureFile" runat="server" class="form-control"/>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="uploadPictureExtensionLbl" runat="server" Text="* Allowed file extensions: 'jpg', 'png', 'jpeg'"></asp:Label>
+                            <asp:Label ID="uploadPictureMaxSizeLbl" runat="server" Text="Maximum file size is 4MB" ></asp:Label>
+                        </div>
+                        <%-- Page2 --%>
+                        <%-- PAge3 --%>
+                        <div class="form-label-group">
+                            <asp:Label ID="serviceNameLbl" runat="server" Text="Service Name"></asp:Label>
+                            <asp:TextBox ID="serviceNameTxt" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="serviceTypeDDLLabel" runat="server" Text="Service Type"></asp:Label>
+                            <asp:DropDownList ID="serviceTypeDDL" runat="server" class="form-control">
+                                 <asp:ListItem Value=""></asp:ListItem>
+                                 <asp:ListItem Value="M"></asp:ListItem>
+                                 <asp:ListItem Value="F"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="serviceDescriptionLbl" runat="server" Text="Description your service (What you do)"></asp:Label>
+                            <asp:TextBox ID="serviceDescriptionTxt" TextMode="MultiLine" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="servicePriceLbl" runat="server" Text="Input your service price"></asp:Label>
+                            <asp:TextBox ID="servicePriceTxt" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-label-group">
+                            <asp:Label ID="serviceProviderTermsAndConditionLbl" runat="server" Text="I agree with the terms and condition of being a service provider"></asp:Label>
+                            <asp:CheckBox ID="serviceProviderTermsAndConditionCheckBox" runat="server" class="form-control"/>
+                        </div>
 
-    <div>
-        <asp:Label ID="userTermsAndConditionLbl" runat="server" Text="I agree to the terms and condition"></asp:Label>
-        <asp:CheckBox ID="userTermsAndConditionCheckBox" runat="server" />
+                        <%-- PAge3 --%>
+                        <div class="form-label-group">
+                            <asp:Label ID="errorLbl" runat="server" ForeColor="Red" Text=""></asp:Label>
+                        </div>
+                        <asp:Button ID="RegisterBtn" OnClick="RegisterBtn_Click" runat="server" Text="Register"/>
+                    </div>
+                 </div>
+            </div>
+        </div>
     </div>
-    <%-- Page1 --%>
-    <%-- Page2 --%>
-
-    <div>
-        <asp:Label ID="uploadKTP" runat="server" Text="Upload your KTP"></asp:Label>
-        <asp:FileUpload ID="KTPUpload" runat="server" />
-    </div>
-    <div>
-        <asp:Label ID="uploadSelfieWithKTP" runat="server" Text="Upload your selfie with KTP"></asp:Label>
-        <asp:FileUpload ID="selfieKTPUpload" runat="server" />
-    </div>
-    <div>
-        <asp:Label ID="uploadPictureLabel" runat="server" Text="Upload your profile picture" ></asp:Label>
-        <asp:FileUpload ID="profilePictureFile" runat="server" />
-    </div>
-    <div>
-        <asp:Label ID="uploadPictureExtensionLbl" runat="server" Text="* Allowed file extensions: 'jpg', 'png', 'jpeg'" ></asp:Label>
-        <asp:Label ID="uploadPictureMaxSizeLbl" runat="server" Text="Maximum file size is 4MB" ></asp:Label>
-    </div>
-    <%-- Page2 --%>
-    <%-- PAge3 --%>
-    <div>
-        <asp:Label ID="serviceNameLbl" runat="server" Text="Service Name"></asp:Label>
-        <asp:TextBox ID="serviceNameTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ID="serviceTypeDDLLabel" runat="server" Text="Service Type"></asp:Label>
-        <asp:DropDownList ID="serviceTypeDDL" runat="server">
-             <asp:ListItem Value=""></asp:ListItem>
-             <asp:ListItem Value="M"></asp:ListItem>
-             <asp:ListItem Value="F"></asp:ListItem>
-        </asp:DropDownList>
-    </div>
-    <div>
-        <asp:Label ID="serviceDescriptionLbl" runat="server" Text="Description your service (What you do)"></asp:Label>
-        <asp:TextBox ID="serviceDescriptionTxt" TextMode="MultiLine" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ID="servicePriceLbl" runat="server" Text="Input your service price"></asp:Label>
-        <asp:TextBox ID="servicePriceTxt" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label ID="serviceProviderTermsAndConditionLbl" runat="server" Text="I agree with the terms and condition of being a service provider"></asp:Label>
-        <asp:CheckBox ID="serviceProviderTermsAndConditionCheckBox" runat="server" />
-    </div>
-    <%-- PAge3 --%>
-    <div>
-        <asp:Label ID="errorLbl" runat="server" ForeColor="Red" Text=""></asp:Label>
-    </div>
-    <asp:Button ID="RegisterBtn" OnClick="RegisterBtn_Click" runat="server" Text="Register" />
+    
     <script type="text/javascript">
         $(document).ready(function () {
             $.validator.addMethod("GenderDDLValidation", function (value, element, param) {
