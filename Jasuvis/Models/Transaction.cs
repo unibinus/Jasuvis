@@ -25,9 +25,9 @@ namespace Jasuvis.Models
         public string UserID { get; set; }
         public Nullable<System.DateTime> TransactionDate { get; set; }
     
-        public virtual Service Service { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual Service Service { get; set; }
+        public virtual User User { get; set; }
     }
 }
