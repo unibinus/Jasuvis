@@ -21,6 +21,12 @@ body {
     background-color: #4B0BBC;
 }
 
+.container {
+    font-family: acumin-pro, sans-serif;
+    font-weight: 100;
+    font-size: medium;
+}
+
 .card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 300;
@@ -102,7 +108,7 @@ body {
     text-align: center;
     padding-top: 1.5rem;
     font-size: large;
-    box-shadow: -5px -5px 25px;
+/*    box-shadow: -5px -5px 25px;*/
 }
 
 .sp-card {
@@ -116,9 +122,23 @@ body {
     padding-bottom: 3rem;
 }
 
-.sp-name {
-    font-family: acumin-pro, sans-serif;
+.form-control.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+    margin-top: 1.5rem;
+}
+
+.regis{
     text-align: center;
-    opacity: 70%;
-    font-weight: bold;
+    font-size: large;
+    font-weight: 500;
+}
+
+label.error {
+    margin-top: 0.6rem;
+    text-align: left;
+    padding-left: 0;
+    font-size: small;
+    color: red;
 }
