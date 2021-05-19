@@ -57,5 +57,22 @@ namespace Jasuvis.Repositories
                 return String.Format("{0}{1:000}", "US", Id);
             }
         }
+
+        public static List<User> GetServiceProviders()
+        {
+            return (from sp in db.Users 
+                    where sp.RoleID.Equals("RO002")
+                    select sp).ToList();
+        }
+
+        public static List<ServiceType> GetServiceTypes()
+        {
+            return (from st in db.ServiceTypes join s in db.Services
+                    on st.ServiceTypeID equals s.ServiceTypeID
+                    join sp in db.Users
+                    on s.UserID equals sp.UserID
+                    where sp.RoleID.Equals("RO002")
+                    select st).ToList();
+        }
     }
 }
