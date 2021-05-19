@@ -14,11 +14,14 @@ namespace Jasuvis.Models
     
     public partial class Review
     {
+        public string ReviewID { get; set; }
         public string UserID { get; set; }
         public string ServiceID { get; set; }
+        public string TransactionID { get; set; }
         public string ReviewDescription { get; set; }
     
         public virtual Service Service { get; set; }
+        public virtual Transaction Transaction { get; set; }
         public virtual User User { get; set; }
     }
 }
