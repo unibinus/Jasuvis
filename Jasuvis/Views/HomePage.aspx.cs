@@ -13,8 +13,9 @@ namespace Jasuvis.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List < ServiceType > listST= UserRepository.GetServiceTypes();
-            Repeater.DataSource = listST;
+            List<User> listSP = UserRepository.GetServiceProviders();
+            var datasource = listSP.AsEnumerable().Take(5);
+            Repeater.DataSource = datasource;
             Repeater.DataBind();
         }
 

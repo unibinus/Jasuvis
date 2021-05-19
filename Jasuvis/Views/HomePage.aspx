@@ -24,9 +24,9 @@
             <asp:Repeater ID="Repeater" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
-<%--                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' Width="100px" />
-                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>'></asp:Label>--%>
-                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
+                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="spImage"/>
+                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>' class="spName"></asp:Label>
+<%--                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>--%>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
