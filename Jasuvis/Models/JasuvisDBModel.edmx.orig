@@ -4,18 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JasuvisDBModel.edmx.diagram.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JasuvisDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Review">
           <Key>
-            <PropertyRef Name="ReviewID" />
             <PropertyRef Name="UserID" />
             <PropertyRef Name="ServiceID" />
-            <PropertyRef Name="TransactionID" />
           </Key>
-          <Property Name="ReviewID" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="UserID" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="ServiceID" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="TransactionID" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="ReviewDescription" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Role">
@@ -55,7 +51,6 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-<<<<<<< HEAD
           <Property Name="UserID" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="RoleID" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
@@ -74,22 +69,6 @@
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="Service" Type="Self.Service" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
-=======
-          <Property Name="UserID" Nullable="false" MaxLength="5" Type="char" />
-          <Property Name="RoleID" Nullable="false" MaxLength="5" Type="char" />
-          <Property Name="Username" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Email" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Password" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="PhoneNumber" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Name" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Gender" Nullable="false" MaxLength="1" Type="char" />
-          <Property Name="Address" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="ProfilePicture" MaxLength="255" Type="varchar" />
-        </EntityType>
-        <Association Name="FK__Review__ServiceI__17F790F9">
-          <End Type="Self.Service" Multiplicity="1" Role="Service" />
-          <End Type="Self.Review" Multiplicity="*" Role="Review" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="ServiceID" />
@@ -100,30 +79,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__Review__UserID__6754599E">
 =======
         <Association Name="FK__Review__UserID__4D94879B">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
-=======
-        <Association Name="FK__Review__Transact__18EBB532">
-          <End Role="Transaction" Type="Self.Transaction" Multiplicity="1" />
-          <End Role="Review" Type="Self.Review" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Transaction">
-              <PropertyRef Name="TransactionID" />
-            </Principal>
-            <Dependent Role="Review">
-              <PropertyRef Name="TransactionID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Review__UserID__1EA48E88">
-          <End Type="Self.User" Multiplicity="1" Role="User" />
-          <End Type="Self.Review" Multiplicity="*" Role="Review" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
@@ -134,18 +95,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__Service__Service__6477ECF3">
 =======
         <Association Name="FK__Service__Service__3C69FB99">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="1" />
           <End Role="Service" Type="Self.Service" Multiplicity="*" />
-=======
-        <Association Name="FK__Service__Service__0C85DE4D">
-          <End Type="Self.ServiceType" Multiplicity="1" Role="ServiceType" />
-          <End Type="Self.Service" Multiplicity="*" Role="Service" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="ServiceType">
               <PropertyRef Name="ServiceTypeID" />
@@ -156,18 +111,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__Service__UserID__6383C8BA">
 =======
         <Association Name="FK__Service__UserID__4CA06362">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Service" Type="Self.Service" Multiplicity="*" />
-=======
-        <Association Name="FK__Service__UserID__1CBC4616">
-          <End Type="Self.User" Multiplicity="1" Role="User" />
-          <End Type="Self.Service" Multiplicity="*" Role="Service" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
@@ -178,18 +127,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__Transacti__Servi__6B24EA82">
 =======
         <Association Name="FK__Transacti__Servi__4316F928">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
           <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
-=======
-        <Association Name="FK__Transacti__Servi__1332DBDC">
-          <End Type="Self.Service" Multiplicity="0..1" Role="Service" />
-          <End Type="Self.Transaction" Multiplicity="*" Role="Transaction" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="ServiceID" />
@@ -200,18 +143,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__Transacti__UserI__6C190EBB">
 =======
         <Association Name="FK__Transacti__UserI__4E88ABD4">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
-=======
-        <Association Name="FK__Transacti__UserI__1DB06A4F">
-          <End Type="Self.User" Multiplicity="0..1" Role="User" />
-          <End Type="Self.Transaction" Multiplicity="*" Role="Transaction" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
@@ -222,18 +159,12 @@
           </ReferentialConstraint>
         </Association>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <Association Name="FK__User__RoleID__5EBF139D">
 =======
         <Association Name="FK__User__RoleID__4F7CD00D">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
-=======
-        <Association Name="FK__User__RoleID__1BC821DD">
-          <End Type="Self.Role" Multiplicity="1" Role="Role" />
-          <End Type="Self.User" Multiplicity="*" Role="User" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <ReferentialConstraint>
             <Principal Role="Role">
               <PropertyRef Name="RoleID" />
@@ -243,14 +174,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="JasuvisDBModeledmxdiagramStoreContainer">
+        <EntityContainer Name="JasuvisDBModelStoreContainer">
           <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ServiceType" EntityType="Self.ServiceType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-<<<<<<< HEAD
 <<<<<<< HEAD
           <AssociationSet Name="FK__Review__ServiceI__68487DD7" Association="Self.FK__Review__ServiceI__68487DD7">
             <End Role="Service" EntitySet="Service" />
@@ -281,60 +211,44 @@
           <AssociationSet Name="FK__Review__ServiceI__403A8C7D" Association="Self.FK__Review__ServiceI__403A8C7D">
             <End Role="Service" EntitySet="Service" />
             <End Role="Review" EntitySet="Review" />
-=======
-          <AssociationSet Name="FK__Review__ServiceI__17F790F9" Association="Self.FK__Review__ServiceI__17F790F9">
-            <End Role="Service" EntitySet="Service" />
-            <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__Review__Transact__18EBB532" Association="Self.FK__Review__Transact__18EBB532">
-            <End EntitySet="Transaction" Role="Transaction" />
-            <End EntitySet="Review" Role="Review" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
-          </AssociationSet>
-          <AssociationSet Name="FK__Review__UserID__1EA48E88" Association="Self.FK__Review__UserID__1EA48E88">
+          <AssociationSet Name="FK__Review__UserID__4D94879B" Association="Self.FK__Review__UserID__4D94879B">
             <End Role="User" EntitySet="User" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__Service__Service__0C85DE4D" Association="Self.FK__Service__Service__0C85DE4D">
+          <AssociationSet Name="FK__Service__Service__3C69FB99" Association="Self.FK__Service__Service__3C69FB99">
             <End Role="ServiceType" EntitySet="ServiceType" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
-          <AssociationSet Name="FK__Service__UserID__1CBC4616" Association="Self.FK__Service__UserID__1CBC4616">
+          <AssociationSet Name="FK__Service__UserID__4CA06362" Association="Self.FK__Service__UserID__4CA06362">
             <End Role="User" EntitySet="User" />
             <End Role="Service" EntitySet="Service" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transacti__Servi__1332DBDC" Association="Self.FK__Transacti__Servi__1332DBDC">
+          <AssociationSet Name="FK__Transacti__Servi__4316F928" Association="Self.FK__Transacti__Servi__4316F928">
             <End Role="Service" EntitySet="Service" />
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transacti__UserI__1DB06A4F" Association="Self.FK__Transacti__UserI__1DB06A4F">
+          <AssociationSet Name="FK__Transacti__UserI__4E88ABD4" Association="Self.FK__Transacti__UserI__4E88ABD4">
             <End Role="User" EntitySet="User" />
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
-<<<<<<< HEAD
           <AssociationSet Name="FK__User__RoleID__4F7CD00D" Association="Self.FK__User__RoleID__4F7CD00D">
 >>>>>>> 577f8a7ed5cb5946454e90ca434b12a3daf6e85a
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
-=======
-          <AssociationSet Name="FK__User__RoleID__1BC821DD" Association="Self.FK__User__RoleID__1BC821DD">
-            <End EntitySet="Role" Role="Role" />
-            <End EntitySet="User" Role="User" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JasuvisDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="JasuvisDBEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Reviews" EntityType="JasuvisDBModel.Review" />
           <EntitySet Name="Roles" EntityType="JasuvisDBModel.Role" />
           <EntitySet Name="Services" EntityType="JasuvisDBModel.Service" />
           <EntitySet Name="ServiceTypes" EntityType="JasuvisDBModel.ServiceType" />
           <EntitySet Name="Transactions" EntityType="JasuvisDBModel.Transaction" />
           <EntitySet Name="Users" EntityType="JasuvisDBModel.User" />
-<<<<<<< HEAD
           <AssociationSet Name="FK__Review__ServiceI__68487DD7" Association="JasuvisDBModel.FK__Review__ServiceI__68487DD7">
             <End Role="Service" EntitySet="Services" />
             <End Role="Review" EntitySet="Reviews" />
@@ -344,9 +258,6 @@
             <End Role="Review" EntitySet="Reviews" />
           </AssociationSet>
           <AssociationSet Name="FK__User__RoleID__5EBF139D" Association="JasuvisDBModel.FK__User__RoleID__5EBF139D">
-=======
-          <AssociationSet Name="FK__User__RoleID__4BAC3F29" Association="JasuvisDBModel.FK__User__RoleID__4BAC3F29">
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
@@ -366,21 +277,7 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
-          <EntitySet Name="Reviews" EntityType="JasuvisDBModel.Review" />
-          <AssociationSet Name="FK__Review__ServiceI__17F790F9" Association="JasuvisDBModel.FK__Review__ServiceI__17F790F9">
-            <End Role="Service" EntitySet="Services" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Review__Transact__18EBB532" Association="JasuvisDBModel.FK__Review__Transact__18EBB532">
-            <End Role="Transaction" EntitySet="Transactions" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Review__UserID__17036CC0" Association="JasuvisDBModel.FK__Review__UserID__17036CC0">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
         </EntityContainer>
-<<<<<<< HEAD
         <EntityType Name="Review">
           <Key>
             <PropertyRef Name="UserID" />
@@ -392,8 +289,6 @@
           <NavigationProperty Name="Service" Relationship="JasuvisDBModel.FK__Review__ServiceI__68487DD7" FromRole="Review" ToRole="Service" />
           <NavigationProperty Name="User" Relationship="JasuvisDBModel.FK__Review__UserID__6754599E" FromRole="Review" ToRole="User" />
         </EntityType>
-=======
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="RoleID" />
@@ -406,22 +301,15 @@
           <Key>
             <PropertyRef Name="ServiceID" />
           </Key>
-          <Property Name="ServiceID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="UserID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ServiceTypeID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ServiceDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="ServiceTypeID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="ServiceDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ServicePrice" Type="Int32" Nullable="false" />
-<<<<<<< HEAD
           <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__ServiceI__68487DD7" FromRole="Service" ToRole="Review" />
           <NavigationProperty Name="ServiceType" Relationship="JasuvisDBModel.FK__Service__Service__6477ECF3" FromRole="Service" ToRole="ServiceType" />
           <NavigationProperty Name="User" Relationship="JasuvisDBModel.FK__Service__UserID__6383C8BA" FromRole="Service" ToRole="User" />
           <NavigationProperty Name="Transactions" Relationship="JasuvisDBModel.FK__Transacti__Servi__6B24EA82" FromRole="Service" ToRole="Transaction" />
-=======
-          <NavigationProperty Name="ServiceType" Relationship="JasuvisDBModel.FK__Service__Service__5165187F" FromRole="Service" ToRole="ServiceType" />
-          <NavigationProperty Name="User" Relationship="JasuvisDBModel.FK__Service__UserID__5070F446" FromRole="Service" ToRole="User" />
-          <NavigationProperty Name="Transactions" Relationship="JasuvisDBModel.FK__Transacti__Servi__5812160E" FromRole="Service" ToRole="Transaction" />
-          <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__ServiceI__17F790F9" FromRole="Service" ToRole="Review" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
         </EntityType>
         <EntityType Name="ServiceType">
           <Key>
@@ -435,18 +323,12 @@
           <Key>
             <PropertyRef Name="TransactionID" />
           </Key>
-          <Property Name="TransactionID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="ServiceID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="UserID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="TransactionDate" Type="DateTime" Precision="0" />
-<<<<<<< HEAD
           <NavigationProperty Name="Service" Relationship="JasuvisDBModel.FK__Transacti__Servi__6B24EA82" FromRole="Transaction" ToRole="Service" />
           <NavigationProperty Name="User" Relationship="JasuvisDBModel.FK__Transacti__UserI__6C190EBB" FromRole="Transaction" ToRole="User" />
-=======
-          <NavigationProperty Name="Service" Relationship="JasuvisDBModel.FK__Transacti__Servi__5812160E" FromRole="Transaction" ToRole="Service" />
-          <NavigationProperty Name="User" Relationship="JasuvisDBModel.FK__Transacti__UserI__59063A47" FromRole="Transaction" ToRole="User" />
-          <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__Transact__18EBB532" FromRole="Transaction" ToRole="Review" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -454,10 +336,6 @@
           </Key>
           <Property Name="UserID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="RoleID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
-<<<<<<< HEAD
-=======
-          <Property Name="Username" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" Type="String" />
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -465,7 +343,6 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-<<<<<<< HEAD
           <Property Name="ProfilePicture" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
 <<<<<<< HEAD
           <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__UserID__6754599E" FromRole="User" ToRole="Review" />
@@ -504,23 +381,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__User__RoleID__5EBF139D">
-=======
-          <Property Name="ProfilePicture" MaxLength="255" FixedLength="false" Unicode="false" Type="String" />
-          <NavigationProperty Name="Role" Relationship="JasuvisDBModel.FK__User__RoleID__4BAC3F29" FromRole="User" ToRole="Role" />
-          <NavigationProperty Name="Services" Relationship="JasuvisDBModel.FK__Service__UserID__5070F446" FromRole="User" ToRole="Service" />
-          <NavigationProperty Name="Transactions" Relationship="JasuvisDBModel.FK__Transacti__UserI__59063A47" FromRole="User" ToRole="Transaction" />
-          <NavigationProperty Name="Reviews" Relationship="JasuvisDBModel.FK__Review__UserID__17036CC0" FromRole="User" ToRole="Review" />
-        </EntityType>
-        <Association Name="FK__User__RoleID__4BAC3F29">
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
           <End Type="JasuvisDBModel.Role" Role="Role" Multiplicity="1" />
           <End Type="JasuvisDBModel.User" Role="User" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Service">
-              <PropertyRef Name="ServiceID" />
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
             </Principal>
-            <Dependent Role="Review">
-              <PropertyRef Name="ServiceID" />
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -528,11 +396,11 @@
           <End Type="JasuvisDBModel.ServiceType" Role="ServiceType" Multiplicity="1" />
           <End Type="JasuvisDBModel.Service" Role="Service" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Transaction">
-              <PropertyRef Name="TransactionID" />
+            <Principal Role="ServiceType">
+              <PropertyRef Name="ServiceTypeID" />
             </Principal>
-            <Dependent Role="Review">
-              <PropertyRef Name="TransactionID" />
+            <Dependent Role="Service">
+              <PropertyRef Name="ServiceTypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -543,7 +411,7 @@
             <Principal Role="User">
               <PropertyRef Name="UserID" />
             </Principal>
-            <Dependent Role="Review">
+            <Dependent Role="Service">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -552,11 +420,11 @@
           <End Type="JasuvisDBModel.Service" Role="Service" Multiplicity="0..1" />
           <End Type="JasuvisDBModel.Transaction" Role="Transaction" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ServiceType">
-              <PropertyRef Name="ServiceTypeID" />
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
             </Principal>
-            <Dependent Role="Service">
-              <PropertyRef Name="ServiceTypeID" />
+            <Dependent Role="Transaction">
+              <PropertyRef Name="ServiceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -567,163 +435,76 @@
             <Principal Role="User">
               <PropertyRef Name="UserID" />
             </Principal>
-            <Dependent Role="Service">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Transacti__Servi__1332DBDC">
-          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
-          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Service">
-              <PropertyRef Name="ServiceID" />
-            </Principal>
-            <Dependent Role="Transaction">
-              <PropertyRef Name="ServiceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Transacti__UserI__1DB06A4F">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserID" />
-            </Principal>
             <Dependent Role="Transaction">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="JasuvisDBEntities6" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Reviews" EntityType="Self.Review" />
-          <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="Services" EntityType="Self.Service" />
-          <EntitySet Name="ServiceTypes" EntityType="Self.ServiceType" />
-          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK__Review__ServiceI__17F790F9" Association="Self.FK__Review__ServiceI__17F790F9">
-            <End Role="Service" EntitySet="Services" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Review__Transact__18EBB532" Association="Self.FK__Review__Transact__18EBB532">
-            <End Role="Transaction" EntitySet="Transactions" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Review__UserID__1EA48E88" Association="Self.FK__Review__UserID__1EA48E88">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Review" EntitySet="Reviews" />
-          </AssociationSet>
-          <AssociationSet Name="FK__User__RoleID__1BC821DD" Association="Self.FK__User__RoleID__1BC821DD">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Service__Service__0C85DE4D" Association="Self.FK__Service__Service__0C85DE4D">
-            <End Role="ServiceType" EntitySet="ServiceTypes" />
-            <End Role="Service" EntitySet="Services" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Service__UserID__1CBC4616" Association="Self.FK__Service__UserID__1CBC4616">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Service" EntitySet="Services" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Transacti__Servi__1332DBDC" Association="Self.FK__Transacti__Servi__1332DBDC">
-            <End Role="Service" EntitySet="Services" />
-            <End Role="Transaction" EntitySet="Transactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Transacti__UserI__1DB06A4F" Association="Self.FK__Transacti__UserI__1DB06A4F">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Transaction" EntitySet="Transactions" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="JasuvisDBModeledmxdiagramStoreContainer" CdmEntityContainer="JasuvisDBEntities6">
+        <EntityContainerMapping StorageEntityContainer="JasuvisDBModelStoreContainer" CdmEntityContainer="JasuvisDBEntities5">
           <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.Review">
+            <EntityTypeMapping TypeName="JasuvisDBModel.Review">
               <MappingFragment StoreEntitySet="Review">
-                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
                 <ScalarProperty Name="ReviewDescription" ColumnName="ReviewDescription" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.Role">
+            <EntityTypeMapping TypeName="JasuvisDBModel.Role">
               <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.Service">
+            <EntityTypeMapping TypeName="JasuvisDBModel.Service">
               <MappingFragment StoreEntitySet="Service">
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
-                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
                 <ScalarProperty Name="ServicePrice" ColumnName="ServicePrice" />
+                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ServiceTypes">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.ServiceType">
+            <EntityTypeMapping TypeName="JasuvisDBModel.ServiceType">
               <MappingFragment StoreEntitySet="ServiceType">
-                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
                 <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transactions">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.Transaction">
+            <EntityTypeMapping TypeName="JasuvisDBModel.Transaction">
               <MappingFragment StoreEntitySet="Transaction">
-                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="JasuvisDBModel.edmx.diagram.User">
+            <EntityTypeMapping TypeName="JasuvisDBModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-<<<<<<< HEAD
                 <ScalarProperty Name="Username" ColumnName="Username" />
-=======
->>>>>>> 9b5b37dc5eeedbb3d48094e9f5d617a4c4d95c73
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="JasuvisDBModel.Review">
-              <MappingFragment StoreEntitySet="Review">
-                <ScalarProperty Name="ReviewDescription" ColumnName="ReviewDescription" />
-                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

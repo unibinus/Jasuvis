@@ -114,22 +114,13 @@ namespace Jasuvis.Views
         protected global::System.Web.UI.WebControls.Label genderLbl;
 
         /// <summary>
-        /// maleRadio control.
+        /// genderDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton maleRadio;
-
-        /// <summary>
-        /// femaleRadio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton femaleRadio;
+        protected global::System.Web.UI.WebControls.DropDownList genderDDL;
 
         /// <summary>
         /// addressLbl control.
@@ -150,31 +141,76 @@ namespace Jasuvis.Views
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
 
         /// <summary>
-        /// serviceProviderlbl control.
+        /// serviceProviderConfirmationLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label serviceProviderlbl;
+        protected global::System.Web.UI.WebControls.Label serviceProviderConfirmationLabel;
 
         /// <summary>
-        /// serviceProviderBtnYes control.
+        /// serviceProviderRadioBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton serviceProviderBtnYes;
+        protected global::System.Web.UI.WebControls.RadioButtonList serviceProviderRadioBtn;
 
         /// <summary>
-        /// serviceProviderBtnNo control.
+        /// userTermsAndConditionLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton serviceProviderBtnNo;
+        protected global::System.Web.UI.WebControls.Label userTermsAndConditionLbl;
+
+        /// <summary>
+        /// userTermsAndConditionCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox userTermsAndConditionCheckBox;
+
+        /// <summary>
+        /// uploadKTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadKTP;
+
+        /// <summary>
+        /// KTPUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload KTPUpload;
+
+        /// <summary>
+        /// uploadSelfieWithKTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadSelfieWithKTP;
+
+        /// <summary>
+        /// selfieKTPUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload selfieKTPUpload;
 
         /// <summary>
         /// uploadPictureLabel control.
@@ -193,6 +229,114 @@ namespace Jasuvis.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload profilePictureFile;
+
+        /// <summary>
+        /// uploadPictureExtensionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadPictureExtensionLbl;
+
+        /// <summary>
+        /// uploadPictureMaxSizeLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadPictureMaxSizeLbl;
+
+        /// <summary>
+        /// serviceNameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceNameLbl;
+
+        /// <summary>
+        /// serviceNameTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox serviceNameTxt;
+
+        /// <summary>
+        /// serviceTypeDDLLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceTypeDDLLabel;
+
+        /// <summary>
+        /// serviceTypeDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList serviceTypeDDL;
+
+        /// <summary>
+        /// serviceDescriptionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceDescriptionLbl;
+
+        /// <summary>
+        /// serviceDescriptionTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox serviceDescriptionTxt;
+
+        /// <summary>
+        /// servicePriceLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label servicePriceLbl;
+
+        /// <summary>
+        /// servicePriceTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox servicePriceTxt;
+
+        /// <summary>
+        /// serviceProviderTermsAndConditionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceProviderTermsAndConditionLbl;
+
+        /// <summary>
+        /// serviceProviderTermsAndConditionCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox serviceProviderTermsAndConditionCheckBox;
 
         /// <summary>
         /// errorLbl control.
