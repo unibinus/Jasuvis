@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jasuvis.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,20 +9,24 @@ namespace Jasuvis.Controllers
 {
     public static class RegisterController
     {
-        private static Boolean uniqueUsername(String username)
+      
+
+        public static void getServiceTypeData(DropDownList serviceTypeDDL)
         {
-            return Handlers.UserHandler.usernameIsUnique(username);
+            List<ServiceType> serviceTypes = Handlers.ServiceTypeHandler.getServiceType();
+            serviceTypeDDL.Items.Add(new ListItem("default", "Select Service Type"));
+            foreach (ServiceType serviceType in serviceTypes)
+            {
+                serviceTypeDDL.Items.Add(new ListItem(serviceType.ServiceName, serviceType.ServiceTypeID));
+            }
+            serviceTypeDDL.DataBind();
+            serviceTypeDDL.SelectedIndex = 0;
         }
+
+
         private static String validateUsername(String username)
         {
-            if (isEmpty(username))
-            {
-                return "Username cannot be empty";
-            }
-            if (username.Length < 3)
-            {
-                return "Minimum username length is 3 characters";
-            }
+
             if (!uniqueUsername(username))
             {
                 return "Sorry the username has been taken, try other username";
@@ -30,34 +35,7 @@ namespace Jasuvis.Controllers
         }
         private static String validateEmail(String email)
         {
-            if (isEmpty(email))
-            {
-                return "Email cannot be empty!";
-            }
-            if (!email.Contains("@") && !email.Contains("."))
-            {
-                return "Email must contain \"@\" and \".\" ";
-            }
-            if (email.StartsWith("@"))
-            {
-                return "email cannot starts with \"@\"";
-            }
-            if (email.EndsWith("@"))
-            {
-                return "email cannot ends with \"@\"";
-            }
-            if (email.StartsWith("."))
-            {
-                return "email cannot starts with \".\"";
-            }
-            if (email.EndsWith("."))
-            {
-                return "email cannot ends with \".\"";
-            }
-            if (Math.Abs(email.IndexOf('@') - email.IndexOf('.')) == 1)
-            {
-                return "\"@\" and \".\" cannot be next to each other";
-            }
+            
             if (!uniqueEmail(email))
             {
                 return "Sorry the email has been taken";
@@ -65,86 +43,16 @@ namespace Jasuvis.Controllers
             return "Success";
         }
 
-        private static String validatePassword(String password)
-        {
-            if (isEmpty(password))
-            {
-                return "Password cannot be empty";
-            }
-            if (password.Length < 8)
-            {
-                return "Minimum password length is 8 characters";
-            }
-            return "Success";
-        }
-
-        private static String validateRole(Boolean isServiceProvider, Boolean isNotServiceProvider)
-        {
-            if(!isServiceProvider && !isNotServiceProvider)
-            {
-                return "Please confirm are you a service provider or not";
-            }
-            return "Success";
-        }
-
-        private static String validateName(String name)
-        {
-            if (isEmpty(name))
-            {
-                return "Name cannot be empty";
-            }
-            return "Success";
-        }
-        private static string validateGender(bool genderMale, bool genderFemale)
-        {
-            if (!genderMale && !genderFemale)
-            {
-                return "Must choose a gender";
-            }
-            return "Success";
-        }
-
         private static String validatePhoneNumber(String phoneNumber)
         {
-            if (isEmpty(phoneNumber))
+            if (!uniquePhoneNumber(phoneNumber))
             {
-                return "Phone Number cannot be empty";
-            }
-            if (!phoneNumber.All(char.IsNumber))
-            {
-                return "Phone Number must be numeric";
+                return "Sorry the phone number already exist, please use another phone number";
             }
             return "Success";
         }
 
-        private static String validateAddress(String address)
-        {
-            if (isEmpty(address))
-            {
-                return "Address cannot be empty";
-            }
-            if (!address.StartsWith("Jl. "))
-            {
-                return "Address must start with Jl.";
-            }
-            return "Success";
-        }
-
-        private static String validateProfilePicture(FileUpload pictureFile, Boolean hasUploadedFile)
-        {
-            var fileExtension = System.IO.Path.GetExtension(pictureFile.FileName);
-            if (!hasUploadedFile)
-            {
-                return "Please insert a profile picture";
-            }
-            if(!fileExtension.Equals(".jpg") && !fileExtension.Equals(".png"))
-            {
-                return "File extension must be .jpg or .png ";
-            }
-            return "Success";
-        }
-
-        public static String registerValidation(String username, String email, String password, Boolean isServiceProvider, Boolean isNotServiceProvider, String name, Boolean genderMaleChosen, Boolean genderFemaleChosen, String phoneNumber, String Address, FileUpload pictureFile, Boolean hasUploadedFile, HttpResponse Response)
+        public static string registerValidation(string username, string email, string password, string name, string phoneNumber, string gender, string userRole, string address, FileUpload kTPfile, FileUpload selfieKTPFile, FileUpload profilePictureFile, string serviceName, string serviceType, string serviceDescription, string servicePrice, HttpResponse Response)
         {
             String errorMsg = validateUsername(username);
             if (errorMsg.Equals("Success"))
@@ -153,83 +61,87 @@ namespace Jasuvis.Controllers
             }
             if (errorMsg.Equals("Success"))
             {
-                errorMsg = validatePassword(password);
-            }
-            if (errorMsg.Equals("Success"))
-            {
-                errorMsg = validateName(name);
-            }
-            if (errorMsg.Equals("Success"))
-            {
-                errorMsg = validateGender(genderMaleChosen, genderFemaleChosen);
-            }
-            if (errorMsg.Equals("Success"))
-            {
                 errorMsg = validatePhoneNumber(phoneNumber);
             }
             if (errorMsg.Equals("Success"))
             {
-                errorMsg = validateAddress(Address);
+                errorMsg = "Validation Passed";
             }
-            if (errorMsg.Equals("Success"))
+            if (errorMsg.Equals("Validation Passed"))
             {
-                errorMsg = validateRole(isServiceProvider, isNotServiceProvider);
-            }
-            if (errorMsg.Equals("Success"))
-            {
-                errorMsg = validateProfilePicture(pictureFile, hasUploadedFile);
-            }
-            if (errorMsg.Equals("Success"))
-            {
-                errorMsg = "Registration Success";
-            }
-            if (errorMsg.Equals("Registration Success"))
-            {
-                String role = userRole(isServiceProvider);
-                String gender = userGender(genderMaleChosen);
-                String pictureFilePath = getFilePath(pictureFile);
-                Handlers.UserHandler.insertUser(username, email, password, role, name, gender, phoneNumber, Address, pictureFilePath);
-                saveFile(pictureFile);
+                if(userRole == "RO001")
+                {
+                    Handlers.UserHandler.insertUser(username, email, password, name, phoneNumber, gender, userRole, address, "", "", "", "", 0);
+
+                }
+                else
+                {
+                    String KTPpictureFilePath = getKTPFilePath(kTPfile);
+                    String profilePictureFilePath = getProfilePictureFilePath(profilePictureFile);
+                    String SelfieKTPFilePath = getSelfieKTPFilePath(selfieKTPFile);
+                    
+                    Handlers.UserHandler.insertUser(username, email, password, name, phoneNumber, gender, userRole, address, profilePictureFilePath, serviceName, serviceType, serviceDescription, int.Parse(servicePrice));
+                    saveFile(kTPfile, profilePictureFile, selfieKTPFile);
+                }
+
                 Response.Redirect("~/Views/LoginPage.aspx");
             }
             return errorMsg;
         }
-        private static String getFilePath(FileUpload pictureFile)
+
+        private static String getKTPFilePath(FileUpload KTPPictureFile)
         {
-            return "~/Assets/" + pictureFile.FileName;
+            return "~/Assets/ServiceProviderKTPPhoto/" + KTPPictureFile.FileName;
         }
-        private static void saveFile(FileUpload pictureFile)
+        private static String getProfilePictureFilePath(FileUpload profilePictureFile)
         {
-            String pictureFilePath = getFilePath(pictureFile);
-            var filepath = HttpContext.Current.Server.MapPath(pictureFilePath);
-            HttpPostedFile file = pictureFile.PostedFile;
-            file.SaveAs(filepath);
-        }
-        private static String userGender(Boolean genderMaleChosen)
+            return "~/Assets/ServiceProviderProfilePicture/" + profilePictureFile.FileName;
+        }        
+        private static String getSelfieKTPFilePath(FileUpload selfieKTPFile)
         {
-            if (genderMaleChosen)
-            {
-                return "M";
-            }
-            return "F";
+            return "~/Assets/ServiceProviderSelfieKTP/" + selfieKTPFile.FileName;
         }
-        private static String userRole(Boolean isServiceProvider)
+
+        private static void saveKTPPhoto(FileUpload KTPPictureFile)
         {
-            if (isServiceProvider)
-            {
-                return "RO002";
-            }
-            return "RO001";
+            String KTPFilePath = getKTPFilePath(KTPPictureFile);
+            var filePath = HttpContext.Current.Server.MapPath(KTPFilePath);
+            HttpPostedFile File = KTPPictureFile.PostedFile;
+            File.SaveAs(filePath);
         }
-        private static Boolean isEmpty(String input)
+        private static void saveProfilePicture(FileUpload ProfilePictureFile)
         {
-            return String.IsNullOrEmpty(input);
+            String ProfilePictureFilePath = getProfilePictureFilePath(ProfilePictureFile);
+            var filePath = HttpContext.Current.Server.MapPath(ProfilePictureFilePath);
+            HttpPostedFile File = ProfilePictureFile.PostedFile;
+            File.SaveAs(filePath);
+        }        
+        private static void saveSelfieKTPPicture(FileUpload selfieKTPFile)
+        {
+            String selfieKTPFilePath = getSelfieKTPFilePath(selfieKTPFile);
+            var filePath = HttpContext.Current.Server.MapPath(selfieKTPFilePath);
+            HttpPostedFile File = selfieKTPFile.PostedFile;
+            File.SaveAs(filePath);
         }
+
+        private static void saveFile(FileUpload KTPPictureFile, FileUpload profilePictureFile, FileUpload selfieKTPFile)
+        {
+            saveKTPPhoto(KTPPictureFile);
+            saveProfilePicture(profilePictureFile);
+            saveSelfieKTPPicture(selfieKTPFile);
+        }
+
         private static Boolean uniqueEmail(String email)
         {
             return Handlers.UserHandler.emailIsUnique(email);
         }
-        
-
+        private static Boolean uniqueUsername(String username)
+        {
+            return Handlers.UserHandler.usernameIsUnique(username);
+        }
+        private static Boolean uniquePhoneNumber(String phoneNumber)
+        {
+            return Handlers.UserHandler.phoneNumberIsUnique(phoneNumber);
+        }
     }
 }

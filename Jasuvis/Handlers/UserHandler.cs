@@ -18,6 +18,11 @@ namespace Jasuvis.Handlers
             return user;
         }
 
+        public static Boolean phoneNumberIsUnique(string phoneNumber)
+        {
+            return Repositories.UserRepository.isPhoneNumberUnique(phoneNumber);
+        }
+
         public static User getUserID(String userId)
         {
             User user = Repositories.UserRepository.getUserById(userId);
@@ -29,9 +34,19 @@ namespace Jasuvis.Handlers
             return Repositories.UserRepository.isEmailUnique(email);
         }
 
-        public static void insertUser(String username, String email, String password, String role, String name, String gender, String phoneNumber, String address, String pictureFilePath)
+
+
+        public static void insertUser(string username, string email, string password, string name, string phoneNumber, string gender, string userRole, string address, string profilePictureFilePath, string serviceName, string serviceType, string serviceDescription, int servicePrice)
         {
-            Repositories.UserRepository.insertUser(username, email, password, role , name, gender, phoneNumber, address, pictureFilePath);
+            if (userRole.Equals("RO001"))
+            {
+                Repositories.UserRepository.insertUser(username, email, password, name, phoneNumber, gender, userRole, address, "");
+            }
+            else
+            {
+                Repositories.UserRepository.insertUser(username, email, password, name, phoneNumber, gender, userRole, address, profilePictureFilePath);
+                Repositories.ServiceRepository.insertService(serviceName, username, serviceType, serviceDescription, servicePrice);
+            }
         }
     }
 }

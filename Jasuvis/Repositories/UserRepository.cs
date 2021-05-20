@@ -22,6 +22,17 @@ namespace Jasuvis.Repositories
             return (from user in db.Users where user.UserID.Equals(userID) select user).FirstOrDefault();
         }
 
+        internal static Boolean isPhoneNumberUnique(string phoneNumber)
+        {
+            User phoneNumberExist = (from user in db.Users where user.PhoneNumber.Equals(phoneNumber) select user).FirstOrDefault();
+            return phoneNumberExist == null;
+        }
+
+        public static User getUserByUsername(String username)
+        {
+            return (from user in db.Users where user.Username.Equals(username) select user).FirstOrDefault();
+        }
+
         public static Boolean isEmailUnique(String email)
         {
             User emailExist = (from user in db.Users where user.Email.Equals(email) select user).FirstOrDefault();
@@ -35,10 +46,10 @@ namespace Jasuvis.Repositories
         }
 
 
-        public static void insertUser(String username, String email, String password, String role, String name, String gender, String phoneNumber, String address, String pictureFilePath)
+        public static void insertUser(string username, string email, string password, string name, string phoneNumber, string gender, string userRole, string address, string profilePictureFilePath)
         {
             String userID = generateUserID();
-            User user = Factories.UserFactory.createUser(userID, username, email, password, role, name, gender, phoneNumber, address, pictureFilePath);
+            User user = Factories.UserFactory.createUser(userID, username, email, password, name, phoneNumber, gender, userRole, address, profilePictureFilePath);
             db.Users.Add(user);
             db.SaveChanges();
         }
@@ -46,13 +57,13 @@ namespace Jasuvis.Repositories
         private static String generateUserID()
         {
             String lastUserId = (from user in db.Users select user.UserID).ToList().LastOrDefault();
-            int Id = int.Parse(lastUserId.Substring(2));
             if (lastUserId == null)
             {
                 return "US001";
             }
             else
             {
+                int Id = int.Parse(lastUserId.Substring(2));
                 Id++;
                 return String.Format("{0}{1:000}", "US", Id);
             }

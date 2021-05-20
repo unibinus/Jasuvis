@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Jasuvis.Repositories
 {
-    public class JasuvisDBSingleton
+    public static class JasuvisDBSingleton
     {
         private static JasuvisDBEntities5 db = null;
         public static JasuvisDBEntities5 getDBInstance()

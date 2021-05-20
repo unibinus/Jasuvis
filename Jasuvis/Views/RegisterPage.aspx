@@ -47,8 +47,8 @@
                         <div class="form-label-group">
                             <asp:Label ID="serviceProviderConfirmationLabel" runat="server" Text="I want to be a service provider"></asp:Label>
                                 <asp:RadioButtonList CssClass="radioClass" ID="serviceProviderRadioBtn" RepeatDirection="Vertical" runat="server"  class="form-control">
-                                     <asp:ListItem Value="Yes">Yes</asp:ListItem>
-                                     <asp:ListItem Value="No">No</asp:ListItem>
+                                     <asp:ListItem Value="RO002">Yes</asp:ListItem>
+                                     <asp:ListItem Value="RO001">No</asp:ListItem>
                                 </asp:RadioButtonList>
                         </div>
 
@@ -84,9 +84,6 @@
                         <div class="form-label-group">
                             <asp:Label ID="serviceTypeDDLLabel" runat="server" Text="Service Type"></asp:Label>
                             <asp:DropDownList ID="serviceTypeDDL" runat="server" class="form-control">
-                                 <asp:ListItem Value=""></asp:ListItem>
-                                 <asp:ListItem Value="M"></asp:ListItem>
-                                 <asp:ListItem Value="F"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-label-group">
@@ -123,6 +120,7 @@
                             else
                                 return true;
                         }, "Please select a Gender.");
+
                         $.validator.addMethod("AddressValidation", function (value, element) {
                             if (!value.startsWith("Jl. ")) {
                                 return false;
@@ -131,12 +129,21 @@
                                 return true;
                             }
                         }, "Address must start with Jl. ");
+
                         $.validator.addMethod("fileSizeValidation", function (value, element, param) {
                             return this.optional(element) || (element.files[0].size <= param);
                         }, "Maximum file size is 4MB.");
+
                         $.validator.addMethod("minimumPrice", function (value, element, param) {
                             return value > param;
                         }, "Minimum Price is 0");
+
+                        $.validator.addMethod("serviceTypeDDLValidation", function (value, element, param) {
+                            if (value == "default")
+                                return false;
+                            else
+                                return true;
+                        }, "Please choose what service type are you providing");
                         $("#<%=RegisterBtn.ClientID%>").click(function () {
 
                         $("#form1").validate({
@@ -191,7 +198,7 @@
                                 required: true
                             },
                         <%=serviceTypeDDL.UniqueID%>: {
-                                required: true 
+                                serviceTypeDDLValidation: true 
                             },
                         <%=servicePriceTxt.UniqueID%>: {
                                 required: true,
@@ -248,9 +255,7 @@
                         <%=serviceNameTxt.UniqueID%>: {
                                 required: "Please fill in your service name"
                         },
-                        <%=serviceTypeDDL.UniqueID%>: {
-                                required: "Please choose what service type are you providing"
-                        },
+
                         <%=servicePriceTxt.UniqueID%>: {
                             required: "Please input your service price"
                         },
