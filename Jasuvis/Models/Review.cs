@@ -12,22 +12,16 @@ namespace Jasuvis.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class Review
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Transaction()
-        {
-            this.Reviews = new HashSet<Review>();
-        }
-    
-        public string TransactionID { get; set; }
-        public string ServiceID { get; set; }
+        public string ReviewID { get; set; }
         public string UserID { get; set; }
-        public Nullable<System.DateTime> TransactionDate { get; set; }
+        public string ServiceID { get; set; }
+        public string TransactionID { get; set; }
+        public string ReviewDescription { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Review> Reviews { get; set; }
         public virtual Service Service { get; set; }
+        public virtual Transaction Transaction { get; set; }
         public virtual User User { get; set; }
     }
 }

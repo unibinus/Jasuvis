@@ -17,6 +17,7 @@ namespace Jasuvis.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Service()
         {
+            this.Reviews = new HashSet<Review>();
             this.Transactions = new HashSet<Transaction>();
         }
     
@@ -26,6 +27,8 @@ namespace Jasuvis.Models
         public string ServiceDescription { get; set; }
         public int ServicePrice { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Review> Reviews { get; set; }
         public virtual ServiceType ServiceType { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
