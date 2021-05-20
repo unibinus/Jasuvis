@@ -50,12 +50,11 @@
                                      <asp:ListItem Value="Yes">Yes</asp:ListItem>
                                      <asp:ListItem Value="No">No</asp:ListItem>
                                 </asp:RadioButtonList>
-                            <%--<asp:Label ID="errorRadioServiceProvider" runat="server" Text="EROROOROROOR"></asp:Label>--%>
                         </div>
 
                         <div class="form-label-group">
-                            <asp:Label ID="userTermsAndConditionLbl" runat="server" Text="I agree to the terms and condition"></asp:Label>
-                            <asp:CheckBox ID="userTermsAndConditionCheckBox" runat="server" class="form-control"/>
+                            <asp:Label ID="userTermsAndConditionLbl" runat="server"></asp:Label>
+                            <asp:CheckBox CssClass="checkboxClass" ID="userTermsAndConditionCheckBox" Text="  I agree to the terms and condition" runat="server" class="form-control"/>
                         </div>
                         <%-- Page1 --%>
                         <%-- Page2 --%>
@@ -99,8 +98,8 @@
                             <asp:TextBox ID="servicePriceTxt" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-label-group">
-                            <asp:Label ID="serviceProviderTermsAndConditionLbl" runat="server" Text="I agree with the terms and condition of being a service provider"></asp:Label>
-                            <asp:CheckBox ID="serviceProviderTermsAndConditionCheckBox" runat="server" class="form-control"/>
+                            <asp:Label ID="serviceProviderTermsAndConditionLbl" runat="server"></asp:Label>
+                            <asp:CheckBox CssClass="checkboxClass" ID="serviceProviderTermsAndConditionCheckBox"  Text="I agree with the terms and condition of being a service provider" runat="server" class="form-control"/>
                         </div>
 
                         <%-- PAge3 --%>
@@ -138,6 +137,8 @@
                         $.validator.addMethod("minimumPrice", function (value, element, param) {
                             return value > param;
                         }, "Minimum Price is 0");
+                        $("#<%=RegisterBtn.ClientID%>").click(function () {
+
                         $("#form1").validate({
                             rules: {
                         <%=usernameTxt.UniqueID %>: {
@@ -188,6 +189,9 @@
                             },
                         <%=serviceNameTxt.UniqueID%>: {
                                 required: true
+                            },
+                        <%=serviceTypeDDL.UniqueID%>: {
+                                required: true 
                             },
                         <%=servicePriceTxt.UniqueID%>: {
                                 required: true,
@@ -241,6 +245,12 @@
                             required: "Please upload your profile photo",
                             extension: "File extension must be either 'jpg', 'png', 'jpeg'"
                         },
+                        <%=serviceNameTxt.UniqueID%>: {
+                                required: "Please fill in your service name"
+                        },
+                        <%=serviceTypeDDL.UniqueID%>: {
+                                required: "Please choose what service type are you providing"
+                        },
                         <%=servicePriceTxt.UniqueID%>: {
                             required: "Please input your service price"
                         },
@@ -255,12 +265,16 @@
                         if (element.is(":radio")) {
                             error.appendTo(element.parents('.radioClass'));
                         }
+                        else if (element.is(":checkbox")) {
+                            error.appendTo(element.parents('.checkboxClass'));
+                        }
                         else { // This is the default behavior   
                             error.insertAfter(element);
                         }
                     }
 
                 });
+                        });
 });
 
 

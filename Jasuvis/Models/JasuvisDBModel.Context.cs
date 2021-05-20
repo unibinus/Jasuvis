@@ -25,7 +25,6 @@ namespace Jasuvis.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceType> ServiceTypes { get; set; }
