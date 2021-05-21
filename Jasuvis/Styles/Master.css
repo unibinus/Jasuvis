@@ -11,6 +11,21 @@ footer {
     box-shadow: inset 0px 12px 25px;
 }
 
+.headerImg{
+    width: 20rem;
+}
+
+.sp-name {
+    text-align: center;
+    font-family: 'acumin-pro';
+    margin-top: 0.5rem;
+}
+
+.sp-image {
+    padding: 0.5rem;
+    border-radius: 100%;
+}
+
 .home-header {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
