@@ -27,35 +27,13 @@
             <asp:Repeater ID="recommendServiceProvider" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
-<<<<<<< HEAD
                         <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-mage"/>
                         <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
                         <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
                         <asp:Label ID="serviceTypeLbl" class="sp-name" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
-=======
-                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="sp-image"/>
-                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
-<%--                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>--%>
->>>>>>> 0ed8fac7a68884085141cb2a36e254eefbba709f
                     </div>
                 </ItemTemplate>
-            </asp:Repeater>
-            
-           <%-- <div class="card sp-card">
-                <img src=""/>
-                <div class="sp-name">Supri</div>
-                <div class="sp-work">Ahli Cuci AC</div>
-            </div>
-            <div class="card sp-card">
-                <img src=""/>
-                <div class="sp-name">Supri</div>
-                <div class="sp-work">Ahli Cuci AC</div>
-            </div>
-            <div class="card sp-card">
-                <img src=""/>
-                <div class="sp-name">Supri</div>
-                <div class="sp-work">Ahli Cuci AC</div>
-            </div>--%>
+            </asp:Repeater
         </div>
     </div>
 </asp:Content>
