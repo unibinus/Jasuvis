@@ -11,6 +11,9 @@
                 <asp:Button ID="spRegisBtn" OnClick="spRegisBtn_Click" runat="server" Text="Sign Up As Service Provider" />
             </div>
         </div>  
+        <div class="headerSVG">
+            <asp:Image ID="image" runat="server" ImageUrl="~/Assets/MonitorClean.svg" class="headerImg"/>
+        </div>
         <div class="header-intro">
             Just Click One Button, and We Will Get Your Problems Done
         </div>
@@ -24,7 +27,7 @@
             <asp:Repeater ID="Repeater" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
-                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="sp-mage"/>
+                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="sp-image"/>
                         <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
 <%--                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>--%>
                     </div>
