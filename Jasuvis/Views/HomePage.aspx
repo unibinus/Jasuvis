@@ -8,7 +8,7 @@
                 Jasuvis
             </div>
             <div class="serviceProv-regis-button btn">
-                <asp:Button ID="spRegisBtn" OnClick="spRegisBtn_Click" runat="server" Text="Sign Up As Service Provider" />
+                <asp:Button ID="RegisBtn" OnClick="RegisBtn_Click" runat="server" Text="Register Here" />
             </div>
         </div>  
         <div class="headerSVG">
