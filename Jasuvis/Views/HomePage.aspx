@@ -21,12 +21,13 @@
             Recommended For You
         </div>
         <div class="carousel">
-            <asp:Repeater ID="Repeater" runat="server">
+            <asp:Repeater ID="recommendServiceProvider" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
-                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="sp-mage"/>
-                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
-<%--                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>--%>
+                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-mage"/>
+                        <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
+                        <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
+                        <asp:Label ID="serviceTypeLbl" class="sp-name" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

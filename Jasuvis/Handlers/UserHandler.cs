@@ -18,6 +18,11 @@ namespace Jasuvis.Handlers
             return user;
         }
 
+        public static List<User> getUserFromServiceList(List<Service> services)
+        {
+            return Repositories.UserRepository.getUserFromServiceList(services);
+        }
+
         public static Boolean phoneNumberIsUnique(string phoneNumber)
         {
             return Repositories.UserRepository.isPhoneNumberUnique(phoneNumber);

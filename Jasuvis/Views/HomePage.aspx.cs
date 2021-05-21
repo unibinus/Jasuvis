@@ -13,10 +13,7 @@ namespace Jasuvis.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<User> listSP = UserRepository.GetServiceProviders();
-            var datasource = listSP.AsEnumerable().Take(5);
-            Repeater.DataSource = datasource;
-            Repeater.DataBind();
+            Controllers.HomeController.recommendServiceProviderData(recommendServiceProvider);
         }
 
         protected void spRegisBtn_Click(object sender, EventArgs e)

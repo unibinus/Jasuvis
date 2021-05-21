@@ -22,7 +22,18 @@ namespace Jasuvis.Repositories
             return (from user in db.Users where user.UserID.Equals(userID) select user).FirstOrDefault();
         }
 
-        internal static Boolean isPhoneNumberUnique(string phoneNumber)
+        public static List<User> getUserFromServiceList(List<Service> services)
+        {
+            List<User> userList = new List<User>();
+            foreach(Service service in services)
+            {
+                User u = (from user in db.Users where user.UserID.Equals(service.UserID) select user).FirstOrDefault();
+                userList.Add(u);
+            }
+            return userList;
+        }
+
+        public static Boolean isPhoneNumberUnique(string phoneNumber)
         {
             User phoneNumberExist = (from user in db.Users where user.PhoneNumber.Equals(phoneNumber) select user).FirstOrDefault();
             return phoneNumberExist == null;
@@ -76,14 +87,14 @@ namespace Jasuvis.Repositories
                     select sp).ToList();
         }
 
-        public static List<ServiceType> GetServiceTypes()
-        {
-            return (from st in db.ServiceTypes join s in db.Services
-                    on st.ServiceTypeID equals s.ServiceTypeID
-                    join sp in db.Users
-                    on s.UserID equals sp.UserID
-                    where sp.RoleID.Equals("RO002")
-                    select st).ToList();
-        }
+        //public static List<ServiceType> GetServiceTypes()
+        //{
+        //    return (from st in db.ServiceTypes join s in db.Services
+        //            on st.ServiceTypeID equals s.ServiceTypeID
+        //            join sp in db.Users
+        //            on s.UserID equals sp.UserID
+        //            where sp.RoleID.Equals("RO002")
+        //            select st).ToList();
+        //}
     }
 }

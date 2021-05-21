@@ -17,7 +17,7 @@ namespace Jasuvis.Controllers
             serviceTypeDDL.Items.Add(new ListItem("default", "Select Service Type"));
             foreach (ServiceType serviceType in serviceTypes)
             {
-                serviceTypeDDL.Items.Add(new ListItem(serviceType.ServiceName, serviceType.ServiceTypeID));
+                serviceTypeDDL.Items.Add(new ListItem(serviceType.ServiceTypeName, serviceType.ServiceTypeID));
             }
             serviceTypeDDL.DataBind();
             serviceTypeDDL.SelectedIndex = 0;

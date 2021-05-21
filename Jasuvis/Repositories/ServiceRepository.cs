@@ -37,5 +37,12 @@ namespace Jasuvis.Repositories
             db.SaveChanges();
         }
     
+        public static List<Service> getRecommendedService()
+        {
+            Random rand = new Random();
+
+            List<Service> s = (from service in db.Services select service).OrderBy(o => Guid.NewGuid()).Take(4).ToList();
+            return s;
+        }
     }
 }
