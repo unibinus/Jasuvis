@@ -24,6 +24,7 @@ namespace Jasuvis.Models
         public string ServiceID { get; set; }
         public string UserID { get; set; }
         public string ServiceTypeID { get; set; }
+        public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
         public int ServicePrice { get; set; }
     

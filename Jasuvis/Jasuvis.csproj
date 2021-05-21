@@ -99,9 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Factories\ServiceFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
+    <Compile Include="Handlers\ServiceHandler.cs" />
     <Compile Include="Handlers\ServiceTypeHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Models\JasuvisDBModel.Context.cs">
