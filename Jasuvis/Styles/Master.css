@@ -11,6 +11,20 @@ footer {
     box-shadow: inset 0px 12px 25px;
 }
 
+.headerImg{
+    width: 20rem;
+}
+
+.carousel {
+    text-align: center;
+    font-family: 'acumin-pro';
+    border-radius: 100%;
+}
+
+.carousel image{
+    padding: 0.5rem;
+}
+
 .home-header {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -146,4 +160,8 @@ label.error {
     padding-left: 0;
     font-size: small;
     color: red;
+}
+
+svg.bi.bi-envelope-fill {
+    color: white;
 }

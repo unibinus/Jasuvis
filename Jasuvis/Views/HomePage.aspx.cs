@@ -16,9 +16,9 @@ namespace Jasuvis.Views
             Controllers.HomeController.recommendServiceProviderData(recommendServiceProvider);
         }
 
-        protected void spRegisBtn_Click(object sender, EventArgs e)
+        protected void RegisBtn_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/RegisterPage.aspx");
         }
     }
 }

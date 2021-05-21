@@ -8,9 +8,12 @@
                 Jasuvis
             </div>
             <div class="serviceProv-regis-button btn">
-                <asp:Button ID="spRegisBtn" OnClick="spRegisBtn_Click" runat="server" Text="Sign Up As Service Provider" />
+                <asp:Button ID="RegisBtn" OnClick="RegisBtn_Click" runat="server" Text="Register Here" />
             </div>
         </div>  
+        <div class="headerSVG">
+            <asp:Image ID="image" runat="server" ImageUrl="~/Assets/MonitorClean.svg" class="headerImg"/>
+        </div>
         <div class="header-intro">
             Just Click One Button, and We Will Get Your Problems Done
         </div>
@@ -24,10 +27,16 @@
             <asp:Repeater ID="recommendServiceProvider" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
+<<<<<<< HEAD
                         <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-mage"/>
                         <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
                         <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
                         <asp:Label ID="serviceTypeLbl" class="sp-name" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
+=======
+                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("ProfilePicture") %>' class="sp-image"/>
+                        <asp:Label ID="nameLbl" class="sp-name" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
+<%--                        <asp:Label ID="serviceLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>--%>
+>>>>>>> 0ed8fac7a68884085141cb2a36e254eefbba709f
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
