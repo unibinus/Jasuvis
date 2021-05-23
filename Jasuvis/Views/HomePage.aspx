@@ -27,13 +27,13 @@
             <asp:Repeater ID="recommendServiceProvider" runat="server">
                 <ItemTemplate>
                     <div class="card sp-card">
-                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-mage"/>
+                        <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-image"/>
                         <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
                         <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
-                        <asp:Label ID="serviceTypeLbl" class="sp-name" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
+                        <asp:Label ID="serviceTypeLbl" class="sp-tname" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
                     </div>
                 </ItemTemplate>
-            </asp:Repeater
+            </asp:Repeater>
         </div>
     </div>
 </asp:Content>
