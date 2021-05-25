@@ -23,5 +23,15 @@ namespace Jasuvis.Repositories
             }
             return serviceTypeList;
         }
+
+        public static ServiceType GetType()
+        {
+            ServiceType st = (from serviceType in db.ServiceTypes
+                              join s in db.Services on serviceType.ServiceTypeID equals s.ServiceTypeID
+                              join u in db.Users on s.UserID equals u.UserID
+                              where serviceType.ServiceTypeID.Equals(s.ServiceTypeID)
+                              select serviceType).FirstOrDefault();
+            return st;
+        }
     }
 }

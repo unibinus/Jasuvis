@@ -44,5 +44,21 @@ namespace Jasuvis.Repositories
             List<Service> s = (from service in db.Services select service).OrderBy(o => Guid.NewGuid()).Take(4).ToList();
             return s;
         }
+
+        public static List<Service> getSP()
+        {
+            List<Service> s = (from service in db.Services select service).OrderBy(o => Guid.NewGuid()).ToList();
+            return s;
+        }
+
+        public static Service GetService()
+        {
+            Service s = ((from service in db.Services
+                         join user in db.Users on service.UserID equals user.UserID
+                         where service.UserID.Equals(user.UserID)
+                         select service)).FirstOrDefault();
+            return s;
+        }
+
     }
 }
