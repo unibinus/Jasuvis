@@ -11,7 +11,7 @@ namespace Jasuvis.Controllers
     {
         public static void serviceProviderData(Repeater spData)
         {
-            List<Service> services = Handlers.ServiceHandler.getRecommendedService();
+            List<Service> services = Handlers.ServiceHandler.getSP();
             List<User> serviceProvider = Handlers.UserHandler.getUserFromServiceList(services);
             List<ServiceType> serviceTypes = Handlers.ServiceTypeHandler.getServiceTypeFromServiceList(services);
 
@@ -20,6 +20,7 @@ namespace Jasuvis.Controllers
             {
                 var newObject = new
                 {
+                    serviceUserID = services[i].UserID,
                     serviceTypeName = serviceTypes[i].ServiceTypeName,
                     servicename = services[i].ServiceName,
                     serviceProviderName = serviceProvider[i].Name,

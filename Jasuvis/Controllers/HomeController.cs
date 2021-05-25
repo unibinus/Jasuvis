@@ -20,6 +20,7 @@ namespace Jasuvis.Controllers
             {
                 var newObject = new
                 {
+                    serviceUserID = services[i].UserID,
                     serviceTypeName = serviceTypes[i].ServiceTypeName,
                     servicename = services[i].ServiceName,
                     serviceProviderName = serviceProvider[i].Name,
