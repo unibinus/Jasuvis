@@ -11,5 +11,16 @@ namespace Jasuvis.Handlers
         {
             return Repositories.ServiceRepository.getRecommendedService();
         }
+
+        public static List<Service> getSP()
+        {
+            return Repositories.ServiceRepository.getSP();
+        }
+
+        public static Service GetService()
+        {
+            return Repositories.ServiceRepository.GetService();
+        }
+
     }
 }
