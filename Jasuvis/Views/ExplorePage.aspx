@@ -6,7 +6,7 @@
         <div class="category-menu">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    Cleaning
+                    <asp:HyperLink ID="spCleaning" runat="server" NavigateUrl="~/Views/Cleaning.aspx">Cleaning</asp:HyperLink>
                 </li>
                 <li class="list-group-item">
                     Salon
@@ -22,17 +22,18 @@
                 </li>
             </ul>
         </div>
-
         <div class="home-rec">
             <div class="carousel explore-car">
                 <asp:Repeater ID="spData" runat="server">
                     <ItemTemplate>
-                        <div class="card Exsp-card">
-                            <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-image"/>
-                            <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
-                            <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
-                            <asp:Label ID="serviceTypeLbl" class="sp-tname" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
-                        </div>
+                        <asp:HyperLink ID="card-link" runat="server" NavigateUrl='<%# "~/Views/ServiceProvider.aspx?id=" + Eval("serviceUserID") %>'>
+                            <div class="card Exsp-card">
+                                <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-image"/>
+                                <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
+                                <asp:Label ID="serviceNameLbl" class="sp-work" runat="server" Text='<%# Eval("ServiceName") %>'></asp:Label>
+                                <asp:Label ID="serviceTypeLbl" class="sp-tname" runat="server" Text='<%# Eval("serviceTypeName") %>' ></asp:Label>
+                            </div>
+                         </asp:HyperLink>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
