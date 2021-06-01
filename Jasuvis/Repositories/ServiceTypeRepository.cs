@@ -13,6 +13,10 @@ namespace Jasuvis.Repositories
         {
             return (from serviceType in db.ServiceTypes select serviceType).ToList();
         }
+        public static string getFirstType()
+        {
+            return (from serviceType in db.ServiceTypes select serviceType.ServiceTypeName).First();
+        }
         public static List<ServiceType> getServiceTypeFromServiceList(List<Service> services)
         {
             List<ServiceType> serviceTypeList = new List<ServiceType>();

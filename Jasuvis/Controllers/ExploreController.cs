@@ -9,6 +9,11 @@ namespace Jasuvis.Controllers
 {
     public class ExploreController
     {
+        
+        public static string firsttype()
+        {
+            return Handlers.ServiceTypeHandler.GetFirstType();
+        }
         public static void serviceProviderData(Repeater spData)
         {
             List<Service> services = Handlers.ServiceHandler.getSP();
@@ -41,9 +46,81 @@ namespace Jasuvis.Controllers
             spData.DataBind();
         }
 
+        public static void ProviderTypeData(Repeater spData, string type)
+        {
+            List<Service> services = Handlers.ServiceHandler.getSP();
+            List<User> serviceProvider = Handlers.UserHandler.getUserFromServiceList(services);
+            List<ServiceType> serviceTypes = Handlers.ServiceTypeHandler.getServiceTypeFromServiceList(services);
+
+            List<dynamic> recommendedList = new List<dynamic>();
+            for (int i = 0; i < serviceProvider.Count; i++)
+            {
+                if (serviceTypes[i].ServiceTypeName.Equals(type))
+                {
+                    var newObject = new
+                    {
+                        serviceUserID = services[i].UserID,
+                        serviceTypeName = serviceTypes[i].ServiceTypeName,
+                        servicename = services[i].ServiceName,
+                        serviceProviderName = serviceProvider[i].Name,
+                        serviceProviderPhoto = serviceProvider[i].ProfilePicture
+                    };
+                    recommendedList.Add(newObject);
+
+                }
+            }
+            //foreach (Service service in services)
+            //{
+            //    var newObject = new
+            //    {
+            //        serviceid = service.ServiceID,
+            //        userid = service.UserID
+            //    };
+            //    newList.Add(newObject);
+            //}
+            spData.DataSource = recommendedList;
+            spData.DataBind();
+        }
+
+        internal static void serviceTypeData(object typeData)
+        {
+            throw new NotImplementedException();
+        }
+
         internal static void serviceProviderData(object spData)
         {
             throw new NotImplementedException();
+        }
+        public static void serviceTypeData(Repeater typeData)
+        {
+            //List<Service> services = Handlers.ServiceHandler.getSP();
+            //List<User> serviceProvider = Handlers.UserHandler.getUserFromServiceList(services);
+            List<ServiceType> serviceTypes = Handlers.ServiceTypeHandler.getServiceType();
+
+            List<dynamic> recommendedList = new List<dynamic>();
+            for (int i = 0; i < serviceTypes.Count; i++)
+            {
+                var newObject = new
+                {
+                    serviceTypeName = serviceTypes[i].ServiceTypeName,
+                    //serviceUserID = services[i].UserID,
+                    //servicename = services[i].ServiceName,
+                    //serviceProviderName = serviceProvider[i].Name,
+                    //serviceProviderPhoto = serviceProvider[i].ProfilePicture
+                };
+                recommendedList.Add(newObject);
+            }
+            //foreach (Service service in services)
+            //{
+            //    var newObject = new
+            //    {
+            //        serviceid = service.ServiceID,
+            //        userid = service.UserID
+            //    };
+            //    newList.Add(newObject);
+            //}
+            typeData.DataSource = recommendedList;
+            typeData.DataBind();
         }
     }
 }

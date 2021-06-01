@@ -92,15 +92,20 @@
       <LastGenOutput>JasuvisDBModel.cs</LastGenOutput>
     </Content>
     <Content Include="Styles\Master.css" />
+    <Content Include="Views\Cleaning.aspx" />
+    <Content Include="Views\ExplorePage.aspx" />
     <Content Include="Views\HomePage.aspx" />
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
+    <Content Include="Views\ServiceProvider.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\ExploreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SPController.cs" />
     <Compile Include="Factories\ServiceFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Handlers\ServiceHandler.cs" />
@@ -144,6 +149,20 @@
     <Compile Include="Repositories\ServiceRepository.cs" />
     <Compile Include="Repositories\ServiceTypeRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Views\Cleaning.aspx.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cleaning.aspx.designer.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExplorePage.aspx.cs">
+      <DependentUpon>ExplorePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ExplorePage.aspx.designer.cs">
+      <DependentUpon>ExplorePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +190,13 @@
     </Compile>
     <Compile Include="Views\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceProvider.aspx.cs">
+      <DependentUpon>ServiceProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceProvider.aspx.designer.cs">
+      <DependentUpon>ServiceProvider.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

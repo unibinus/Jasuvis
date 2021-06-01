@@ -26,7 +26,7 @@
         <div class="carousel">
             <asp:Repeater ID="recommendServiceProvider" runat="server">
                 <ItemTemplate>
-                    <asp:HyperLink ID="card-link" runat="server" NavigateUrl='<%# "~/Views/ServiceProvider.aspx?id=" + Eval("serviceUserID") %>'>
+                    <asp:HyperLink ID="cardlink" runat="server" NavigateUrl='<%# "~/Views/ServiceProvider.aspx?id=" + Eval("serviceUserID") %>'>
                         <div class="card sp-card">
                             <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("serviceProviderPhoto") %>' class="sp-image"/>
                             <asp:Label ID="serviceProviderNameLbl" class="sp-name" runat="server" Text='<%# Eval("serviceProviderName") %>' ></asp:Label>
