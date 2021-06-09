@@ -14,5 +14,13 @@ namespace Jasuvis.Views
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void tr_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+
+            }
+        }
     }
 }

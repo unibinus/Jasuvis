@@ -37,5 +37,12 @@ namespace Jasuvis.Repositories
                               select serviceType).FirstOrDefault();
             return st;
         }
+        public static ServiceType GetType(Service service)
+        {
+            ServiceType st = (from serviceType in db.ServiceTypes
+                              where serviceType.ServiceTypeID.Equals(service.ServiceTypeID)
+                              select serviceType).FirstOrDefault();
+            return st;
+        }
     }
 }

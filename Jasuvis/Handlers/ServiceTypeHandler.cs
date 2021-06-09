@@ -26,5 +26,9 @@ namespace Jasuvis.Handlers
         {
             return Repositories.ServiceTypeRepository.getFirstType();
         }
+        public static ServiceType GetType(Service s)
+        {
+            return Repositories.ServiceTypeRepository.GetType(s);
+        }
     }
 }

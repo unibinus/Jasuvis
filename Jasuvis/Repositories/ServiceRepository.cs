@@ -59,6 +59,12 @@ namespace Jasuvis.Repositories
                          select service)).FirstOrDefault();
             return s;
         }
-
+        public static Service GetService(User u)
+        {
+            Service s = ((from service in db.Services
+                          where service.UserID.Equals(u.UserID)
+                          select service)).FirstOrDefault();
+            return s;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Jasuvis.Views
 {
     public partial class ExplorePage : System.Web.UI.Page
     {
-        string types;
+        string types = Controllers.ExploreController.firsttype();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
