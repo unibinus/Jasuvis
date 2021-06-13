@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -81,6 +84,18 @@
       <DependentUpon>JasuvisDB.mdf</DependentUpon>
     </Content>
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\chaeryeong.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\ipin.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\kwa.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\Lia.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\ryujin.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\Screenshot %2811%29.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\Screenshot %2813%29.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\Screenshot %284%29.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\Screenshot %289%29.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\upin.jpg" />
+    <Content Include="Assets\ServiceProviderProfilePicture\yeji.png" />
+    <Content Include="Assets\ServiceProviderProfilePicture\yuna.jpg" />
     <Content Include="Models\JasuvisDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>JasuvisDBModel.edmx</DependentUpon>
@@ -91,20 +106,33 @@
       <DependentUpon>JasuvisDBModel.edmx</DependentUpon>
       <LastGenOutput>JasuvisDBModel.cs</LastGenOutput>
     </Content>
+    <Content Include="obj\Debug\Jasuvis.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Jasuvis.dll" />
+    <Content Include="obj\Debug\Jasuvis.pdb" />
+    <Content Include="obj\Debug\TempPE\Models.JasuvisDBModel.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.JasuvisDBModel.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.JasuvisDBModel.Designer.cs.dll" />
     <Content Include="Styles\Master.css" />
+    <Content Include="Views\Cleaning.aspx" />
+    <Content Include="Views\ExplorePage.aspx" />
     <Content Include="Views\HomePage.aspx" />
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
+    <Content Include="Views\ServiceProvider.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\ExploreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SPController.cs" />
     <Compile Include="Factories\ServiceFactory.cs" />
+    <Compile Include="Factories\TransactionFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Handlers\ServiceHandler.cs" />
     <Compile Include="Handlers\ServiceTypeHandler.cs" />
+    <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Models\JasuvisDBModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -139,11 +167,28 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>JasuvisDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\JasuvisDBSingleton.cs" />
     <Compile Include="Repositories\ServiceRepository.cs" />
     <Compile Include="Repositories\ServiceTypeRepository.cs" />
+    <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Views\Cleaning.aspx.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cleaning.aspx.designer.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExplorePage.aspx.cs">
+      <DependentUpon>ExplorePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ExplorePage.aspx.designer.cs">
+      <DependentUpon>ExplorePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -172,6 +217,13 @@
     <Compile Include="Views\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ServiceProvider.aspx.cs">
+      <DependentUpon>ServiceProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceProvider.aspx.designer.cs">
+      <DependentUpon>ServiceProvider.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\JasuvisDBModel.edmx">
@@ -181,6 +233,13 @@
     <Content Include="Models\JasuvisDBModel.edmx.diagram">
       <DependentUpon>JasuvisDBModel.edmx</DependentUpon>
     </Content>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\JasuvisDBModel.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\JasuvisDBModel.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\JasuvisDBModel.ssdl" />
+    <Content Include="obj\Debug\Jasuvis.csproj.CopyComplete" />
+    <Content Include="obj\Debug\Jasuvis.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Jasuvis.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <Content Include="Views\MasterPage.Master" />
     <None Include="Web.Debug.config">
@@ -192,7 +251,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\ServiceProviderKTPPhoto\" />
-    <Folder Include="Assets\ServiceProviderProfilePicture\" />
     <Folder Include="Assets\ServiceProviderSelfieKTP\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
