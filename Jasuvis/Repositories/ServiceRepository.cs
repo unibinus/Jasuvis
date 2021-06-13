@@ -36,7 +36,7 @@ namespace Jasuvis.Repositories
             db.Services.Add(service);
             db.SaveChanges();
         }
-    
+
         public static List<Service> getRecommendedService()
         {
             Random rand = new Random();
@@ -54,11 +54,22 @@ namespace Jasuvis.Repositories
         public static Service GetService()
         {
             Service s = ((from service in db.Services
-                         join user in db.Users on service.UserID equals user.UserID
-                         where service.UserID.Equals(user.UserID)
-                         select service)).FirstOrDefault();
+                          join user in db.Users on service.UserID equals user.UserID
+                          where service.UserID.Equals(user.UserID)
+                          select service)).FirstOrDefault();
+            return s;
+        }
+        public static Service GetService(User u)
+        {
+            Service s = ((from service in db.Services
+                          where service.UserID.Equals(u.UserID)
+                          select service)).FirstOrDefault();
             return s;
         }
 
+        public static Service getServiceById(String ServiceID)
+        {
+            return (from service in db.Services where service.ServiceID.Equals(ServiceID) select service).FirstOrDefault();
+        }
     }
 }

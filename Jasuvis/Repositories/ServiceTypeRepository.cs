@@ -13,6 +13,10 @@ namespace Jasuvis.Repositories
         {
             return (from serviceType in db.ServiceTypes select serviceType).ToList();
         }
+        public static string getFirstType()
+        {
+            return (from serviceType in db.ServiceTypes select serviceType.ServiceTypeName).First();
+        }
         public static List<ServiceType> getServiceTypeFromServiceList(List<Service> services)
         {
             List<ServiceType> serviceTypeList = new List<ServiceType>();
@@ -30,6 +34,13 @@ namespace Jasuvis.Repositories
                               join s in db.Services on serviceType.ServiceTypeID equals s.ServiceTypeID
                               join u in db.Users on s.UserID equals u.UserID
                               where serviceType.ServiceTypeID.Equals(s.ServiceTypeID)
+                              select serviceType).FirstOrDefault();
+            return st;
+        }
+        public static ServiceType GetType(Service service)
+        {
+            ServiceType st = (from serviceType in db.ServiceTypes
+                              where serviceType.ServiceTypeID.Equals(service.ServiceTypeID)
                               select serviceType).FirstOrDefault();
             return st;
         }

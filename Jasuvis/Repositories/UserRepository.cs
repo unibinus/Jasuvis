@@ -25,7 +25,7 @@ namespace Jasuvis.Repositories
         public static List<User> getUserFromServiceList(List<Service> services)
         {
             List<User> userList = new List<User>();
-            foreach(Service service in services)
+            foreach (Service service in services)
             {
                 User u = (from user in db.Users where user.UserID.Equals(service.UserID) select user).FirstOrDefault();
                 userList.Add(u);
@@ -82,7 +82,7 @@ namespace Jasuvis.Repositories
 
         public static List<User> GetServiceProviders()
         {
-            return (from sp in db.Users 
+            return (from sp in db.Users
                     where sp.RoleID.Equals("RO002")
                     select sp).ToList();
         }
