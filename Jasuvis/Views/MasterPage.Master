@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Jasuvis.Views.MasterPage" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Jasuvis.Views.MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -36,8 +36,11 @@
                   <li class="nav-item active">
                     <asp:HyperLink class="nav-link" ID="exploreLink" NavigateUrl="~/Views/ExplorePage.aspx" runat="server">Explore</asp:HyperLink>
                   </li>
-                  <li class="nav-item active">
-                    <asp:HyperLink class="nav-link" ID="loginLink" NavigateUrl="~/Views/LoginPage.aspx" runat="server">Login</asp:HyperLink>
+                    <li class="nav-item active">
+                    <asp:HyperLink class="nav-link" ID="TransactionLink" NavigateUrl="~/Views/Cleaning.aspx" runat="server">Transaction</asp:HyperLink>
+                  </li>
+                    <li class="nav-item active">
+                    <asp:LinkButton class="nav-link" ID="loginLink" runat="server" CausesValidation="false" OnCommand="loginLink_Command">Login</asp:LinkButton>
                   </li>
                  </ul>
             </div>

@@ -11,9 +11,28 @@ namespace Jasuvis.Views
 {
     public partial class ExplorePage : System.Web.UI.Page
     {
+        string types = Handlers.ServiceTypeHandler.GetFirstType();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Controllers.ExploreController.serviceProviderData(spData);
+            if (!IsPostBack)
+            {
+                Controllers.ExploreController.ProviderTypeData(spData, types);
+                Controllers.ExploreController.serviceTypeData(typeData);
+            }
+            else
+            {
+                Controllers.ExploreController.ProviderTypeData(spData, types);
+                Controllers.ExploreController.serviceTypeData(typeData);
+            }
+
+        }
+
+        protected void CategoryBtn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string type = btn.CommandArgument;
+            types = btn.CommandArgument;
+            Controllers.ExploreController.ProviderTypeData(spData, type);
         }
     }
 }

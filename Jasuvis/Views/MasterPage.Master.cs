@@ -11,7 +11,15 @@ namespace Jasuvis.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserLoggedin"] != null)
+            {
+                TransactionLink.Visible = true;
+                loginLink.Text = string.Format("Logout");
+            }
+            else
+            {
+                TransactionLink.Visible = false;
+            }
         }
 
 
@@ -23,6 +31,22 @@ namespace Jasuvis.Views
         protected void searchButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void loginLink_Command(object sender, CommandEventArgs e)
+        {
+            if (loginLink.Text == "Logout")
+            {
+                Session["UserLoggedin"] = null;
+                Session.Clear();
+                Session.Abandon();
+                loginLink.Text = string.Format("Login");
+                Response.Redirect("~/Views/HomePage.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Views/LoginPage.aspx");
+            }
         }
     }
 }
