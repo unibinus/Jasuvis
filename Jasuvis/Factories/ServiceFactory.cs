@@ -15,6 +15,7 @@ namespace Jasuvis.Factories
             service.ServiceID = serviceID;
             service.UserID = userID;
             service.ServiceTypeID = serviceType;
+            service.ServiceName = serviceName;
             service.ServiceDescription = serviceDescription;
             service.ServicePrice = servicePrice;
             return service;
