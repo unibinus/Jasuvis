@@ -21,6 +21,13 @@ namespace Jasuvis.Handlers
         {
             return Repositories.ServiceRepository.GetService();
         }
-
+        public static Service GetService(User u)
+        {
+            return Repositories.ServiceRepository.GetService(u);
+        }
+        public static Service GetServiceByID(String id)
+        {
+            return Repositories.ServiceRepository.getServiceById(id);
+        }
     }
 }
