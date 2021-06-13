@@ -1,4 +1,4 @@
-﻿#searchButton {
+﻿﻿#searchButton {
     background-color: #4B0BBC;
     color: white;
 }
@@ -12,7 +12,7 @@ footer {
     text-align: center;
 }
 
-.headerImg{
+.headerImg {
     width: 20rem;
 }
 
@@ -22,9 +22,9 @@ footer {
     border-radius: 100%;
 }
 
-.carousel image{
-    padding: 0.5rem;
-}
+    .carousel image {
+        padding: 0.5rem;
+    }
 
 .home-header {
     padding-top: 2.5rem;
@@ -38,6 +38,7 @@ footer {
 
 body {
     background-color: #4B0BBC;
+    overflow-x:hidden;
 }
 
 .container {
@@ -70,30 +71,30 @@ body {
     margin-bottom: 1rem;
 }
 
-.form-label-group TextBox {
-    height: auto;
-    border-radius: 2rem;
-}
+    .form-label-group TextBox {
+        height: auto;
+        border-radius: 2rem;
+    }
 
-.form-label-group > TextBox,
-.form-label-group > label {
-    padding: var(--input-padding-y) var(--input-padding-x);
-}
+    .form-label-group > TextBox,
+    .form-label-group > label {
+        padding: var(--input-padding-y) var(--input-padding-x);
+    }
 
-.form-label-group > label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    margin-bottom: 0;
-    /* Override default `<label>` margin */
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    transition: all .1s ease-in-out;
-}
+    .form-label-group > label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+        /* Override default `<label>` margin */
+        line-height: 1.5;
+        color: #495057;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        transition: all .1s ease-in-out;
+    }
 
 .home-header {
     display: flex;
@@ -128,7 +129,7 @@ body {
     text-align: center;
     padding-top: 1.5rem;
     font-size: large;
-/*    box-shadow: -5px -5px 25px;*/
+    /*    box-shadow: -5px -5px 25px;*/
 }
 
 .carousel {
@@ -145,7 +146,7 @@ body {
     margin-top: 1.5rem;
 }
 
-.regis{
+.regis {
     text-align: center;
     font-size: large;
     font-weight: 500;
@@ -206,7 +207,7 @@ sp-tname {
     background-color: #4B0BBC;
 }
 
-.explore-body {
+.explore-body, .spDetail {
     display: flex;
 }
 
@@ -215,4 +216,162 @@ sp-tname {
     font-family: 'Bebas Neue', Arial;
     color: white;
     border-color: white;
+}
+
+.spDetail img {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.spDetail {
+    margin-top: 2vw;
+    margin: 50px 50px 20px 50px;
+}
+
+.spDesc {
+    display: flex;
+    flex-direction: column;
+}
+
+.spProfile, .spRating {
+    display: flex;
+    margin: 0px 50px 20px 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spName {
+    font-weight: bold;
+}
+
+.spBtn {
+    display: flex;
+    margin: 0px 50px 20px 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sp {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3.5rem;
+    border: 0;
+    border-top: solid 1px black;
+    width: 76vw;
+}
+
+#tr-hr {
+    margin-top: 0.1rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    border: 0;
+    border-top: solid 1px purple;
+    width: 110vw;
+}
+
+.wrapper {
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.spRating {
+    align-items: center;
+    margin-left: 12vw;
+}
+
+.spBtn .btn {
+    margin: 40px 0 40px;
+}
+
+.spDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spDesc, .spReview {
+    position: absolute;
+    margin: 0px 310px 20px 0px;
+    word-break: break-word;
+    left: 450px;
+}
+
+.Background {
+    background-color: Black;
+    filter: alpha(opacity=90);
+    opacity: 0.8;
+}
+
+.Popup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1rem;
+    padding-top: 40px;
+    width: 450px;
+}
+
+#Panel1 .Popup {
+    height: 450px;
+}
+
+.Popsp-image {
+    max-width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+.card.popsp-card {
+    padding: 0.6rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: none;
+}
+
+.transparentButton {
+    background-color: transparent;
+    border: none;
+}
+
+.tr {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.tr-spDetail img {
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.tr-spDetail {
+    margin-top: 2vw;
+    margin: 50px 50px 20px 50px;
+}
+
+.tr-Detail {
+    margin-top: 5vw;
+    margin-right: 3vw;
+    text-align: center;
+}
+
+.tr-spProfile {
+    display: flex;
+    margin: -80px 50px 20px 140px;
+    flex-direction: column;
+    justify-content: center;
 }
